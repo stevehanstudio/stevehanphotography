@@ -1,24 +1,32 @@
 import React from "react"
 import styled from "styled-components"
-const Footer = () => {
+const Footer = ({ location }) => {
   return (
-    <Wrapper>
+    <Wrapper location={location}>
       <p>
-        &copy; {new Date().getFullYear()} John Smilga. All rights reserved.
-        Built with Gatsby
+        &copy; {new Date().getFullYear()} Steve Han. All rights reserved.
       </p>
     </Wrapper>
   )
 }
 const Wrapper = styled.footer`
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   height: 5rem;
   display: grid;
   place-items: center;
-  background: var(--clr-black);
+  background: ${({ location }) => (location === '/' ? 'transparent' : 'var(--clr-black)')};
+  //background: transparent;
+  //opacity: 0.8;
+  //  background: var(--clr-black);
   text-align: center;
   padding: 1rem;
   p {
-    color: var(--clr-white);
+    //color: var(--clr-white);
+    color: rgba(255,255,255,0.7);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     margin-bottom: 0;
     @media (max-width: 576px) {
       font-size: 0.75rem;

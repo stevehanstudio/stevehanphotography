@@ -1,18 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, Hero } from "../components"
+import { Layout, Portfolios } from "../components"
 //import SEO from "../components/seo"
 
 const HomePage = ({ data }) => {
-  console.log(data);
-  const {
-    allAirtable: { nodes: portfolios }
-  } = data
-  return (
-    <Layout location="/">
-      <Hero portfolios={portfolios} />
-    </Layout>
-  )
+   const {
+      allAirtable: { nodes: portfolios }
+   } = data
+   return (
+      <Layout>
+         <Portfolios portfolios={portfolios} />
+      </Layout>
+   )
 }
 
 export const query = graphql`

@@ -1,9 +1,15 @@
 import React from "react"
 import styled from "styled-components"
 import Title from "./Title"
-import services from "../constants/services"
+
 const About = () => {
-  return <h2>about component</h2>
+  return <Wrapper className="section">
+    <Title title="About me" />
+    <h6>Steve Han Bio</h6>
+    <div className="section">
+
+    </div>  
+  </Wrapper>
 }
 const Wrapper = styled.section`
   .section-center {

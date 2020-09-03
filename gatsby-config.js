@@ -4,13 +4,13 @@ require("dotenv").config({
 // const queries = require("./src/constants/algolia")
 module.exports = {
   siteMetadata: {
-    title: `Design Shop`,
-    description: `Gatsby Airtable Example. Built using Airtable, Algolia Search, Gatsby Background Image plugin and  React Context API. Containts two sliders, real-time Airtable updates and submenus. Styled using Styled-Components. `,
-    author: `@johnsmilga`,
-    titleTemplate: `%s | Gatsby - Airtable`,
+    title: `Steve Han Photography portfolio`,
+    description: `Photography and video porftolio built using React, Gatsby, Airtable, Gatsby Background Image plugin and  React Context API. Styled using Styled-Components. `,
+    author: `@stevehan`,
+    titleTemplate: `%s | Steve Han Photography`,
     url: `https://gatsby-airtable-design-project.netlify.app/`,
     image: `mainBcg.png`,
-    twitterUsername: `@john_smilga`,
+    twitterUsername: `@stevehanphoto`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -40,6 +40,22 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.GATSBY_AIRTABLE_API,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+            tableName: `Portfolios`,
+            mapping: {
+              image: `fileNode`
+            }
+          },
+        ]
+      }
     },
   ],
 }

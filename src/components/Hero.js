@@ -1,10 +1,62 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Background from "./Background"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
-const Hero = () => {
-  return <h2>hero component</h2>
+
+const Hero = ({ portfolios }) => {
+  const images = portfolios.map(item => {
+    const {
+      data: {
+        image: {
+          localFiles
+        }
+      }
+    } = item
+    const image = localFiles[0].childImageSharp.fluid
+    return image
+  })
+
+  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    const lastIndex = images.length - 1
+    if (index < 0) {
+      setIndex(lastIndex)
+    }
+    if (index > lastIndex) {
+      setIndex(0)
+    }
+  }, [index, images])
+
+  console.log("index, images", index, images);
+
+  return (
+    <Wrapper>
+      <Background image={images[index]}>
+        <article>
+{/*          <h1>{name}</h1>
+          <Link to="portfolios">Portfolios</Link>*/}
+        </article>
+      </Background>
+      <button className="prev-btn" onClick={() => setIndex(index-1)}>
+        <FiChevronLeft />
+      </button>
+      <button className="next-btn" onClick={() => setIndex(index+1)}>
+        <FiChevronRight />
+      </button>
+      <div className="dots">
+        {images.map((_, btnIndex) => {
+          return (
+            <span 
+              key={btnIndex}
+              onClick={() => setIndex(btnIndex)}
+              className={index === btnIndex ? "active" : undefined}
+            ></span>
+          )
+        })}
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -22,7 +74,6 @@ const Wrapper = styled.section`
     }
     h3 {
       font-weight: 400;
-      font-family: "Caveat", cursive;
     }
     a {
       background: transparent;
@@ -40,7 +91,6 @@ const Wrapper = styled.section`
       color: var(--clr-black);
     }
     @media (min-width: 800px) {
-      /* padding: 0 1rem; */
       a {
         font-size: 1.25rem;
         padding: 0.5rem 1.25rem;
@@ -89,7 +139,7 @@ const Wrapper = styled.section`
 
   .dots {
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -100,7 +150,7 @@ const Wrapper = styled.section`
       height: 0.75rem;
       width: 0.75rem;
       border-radius: 50%;
-      background: var(--clr-white);
+      background: transparent;
       margin: 0 1rem;
       border: 2px solid var(--clr-white);
       @media (min-width: 800px) {
@@ -111,7 +161,7 @@ const Wrapper = styled.section`
       }
     }
     span.active {
-      background-color: transparent;
+      background: var(--clr-white);
     }
   }
 `

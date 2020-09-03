@@ -1,17 +1,47 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
-import logo from "../images/logo.svg"
+import logo from "../images/SteveHanPhotography_logo.png"
 import { GoThreeBars } from "react-icons/go"
 import { Link } from "gatsby"
-import NavLink from "./NavLink"
+//import NavLink from "./NavLink"
+import {GatsbyContext} from '../context/context'
 
-const Navbar = () => {
-  return <h2>navbar component</h2>
+const Navbar = ({location}) => {
+  const { isSidebarOpen, showSidebar, links } = useContext(GatsbyContext)
+  console.log("location", location);
+
+  return <Wrapper location={location}>
+    <div className="nav-center">
+      <div className="nav-header">
+        <Link to="/">
+          <img src={logo} alt="Steve Han Photography logo"></img>
+        </Link>
+        {!isSidebarOpen &&
+          <button className="toggle-btn" onClick={showSidebar}>
+            <GoThreeBars />
+          </button>
+        }
+      </div>
+      <ul className="nav-links">
+        {links.map((link, index) => {
+          const {url, label} = link
+          if (index !== 0) {
+            return (
+              <li key={index}>
+                <Link className="button" to={url}>{label}</Link>
+              </li>
+            )
+          }
+          return null
+        })}
+      </ul>  
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.nav`
   position: relative;
-  background: transparent;
+  background: ${({ location }) => (location === '/' ? 'transparent' : 'var(--clr-black)')};
   z-index: 1;
   height: 5rem;
   display: flex;
@@ -22,12 +52,14 @@ const Wrapper = styled.nav`
     max-width: var(--max-width);
   }
   .nav-header {
-    color: var(--clr-white);
+    color: rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: space-between;
     img {
       width: auto;
+      height: 60px;
+      transform: translateY(-5px);
     }
     .toggle-btn {
       width: 3.5rem;
@@ -39,7 +71,7 @@ const Wrapper = styled.nav`
       border-radius: 2rem;
       border: transparent;
       color: var(--clr-white);
-      background: var(--clr-primary-5);
+      background: transparent;
       cursor: pointer;
       transition: var(--transition);
       &:hover {
@@ -72,8 +104,9 @@ const Wrapper = styled.nav`
       padding: 1rem 0;
       position: relative;
     }
-    button {
-      color: var(--clr-white);
+    button, .button {
+      color: rgba(255,255,255,0.7);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
       background: transparent;
       border: transparent;
       font-size: 1rem;
@@ -83,8 +116,11 @@ const Wrapper = styled.nav`
       width: 100%;
       text-transform: capitalize;
       position: relative;
-    }
-  }
+      &:hover {
+        color: var(--clr-white);
+      }
+    }    
+}
 `
 
 export default Navbar

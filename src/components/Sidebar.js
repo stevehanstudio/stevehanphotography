@@ -2,9 +2,24 @@ import React, { useContext } from "react"
 import styled from "styled-components"
 import { MdClose } from "react-icons/md"
 import { Link } from "gatsby"
+import {GatsbyContext} from "../context/context"
 
 const Sidebar = () => {
-  return <h2>sidebar component</h2>
+  const {links, hideSidebar} = useContext(GatsbyContext)
+
+  return <Wrapper>
+    <div className="container">
+      <button onClick={hideSidebar}>
+        <MdClose className="icon" />
+      </button>
+      <div className="links">
+        {links.map((link, index) => {
+          const {url, label} = link
+          return <Link to={url} key={index} onClick={hideSidebar}>{label}</Link>
+        })}
+      </div>
+    </div>  
+  </Wrapper>
 }
 const Wrapper = styled.aside`
   position: fixed;
@@ -21,7 +36,8 @@ const Wrapper = styled.aside`
     display: none;
   }
   .container {
-    background: var(--clr-white);
+    //background: var(--clr-white);
+    background: rgba(0,0,0,0.7);
     width: 80vw;
     height: 80vh;
     border-radius: var(--radius);
@@ -35,7 +51,8 @@ const Wrapper = styled.aside`
       border: transparent;
       font-size: 2rem;
       cursor: pointer;
-      color: var(--clr-grey-5);
+      color: var(--clr-white);
+      //      color: var(--clr-grey-5);
     }
     .links {
       display: grid;
@@ -49,16 +66,20 @@ const Wrapper = styled.aside`
         gap: 0.75rem;
         grid-gap: 0.75rem;
         align-items: center;
-        color: #0a2540;
+        color: rgba(255,255,255,0.6);
+        //color: #0a2540;
         text-transform: capitalize;
-        font-weight: 700;
+        font-weight: 500;
+        //font-weight: 700;
         font-size: 1.2rem;
         .icon {
           color: #88add2;
           font-size: 2rem;
         }
         &:hover {
-          color: #88add2;
+          color: rgba(255,255,255,1);
+          //cursor: pointer;
+//          color: #88add2;
           .icon {
             color: #0a2540;
           }
