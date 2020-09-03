@@ -7,7 +7,6 @@
   "dependencies": {
     "@styled-icons/fa-solid": "^10.10.0",
     "airtable": "^0.8.1",
-    "algoliasearch": "^4.3.0",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.23.12",
     "gatsby-background-image": "^1.1.1",
