@@ -28,8 +28,6 @@ const Hero = ({ portfolios }) => {
     }
   }, [index, images])
 
-  console.log("index, images", index, images);
-
   return (
     <Wrapper>
       <Background image={images[index]}>

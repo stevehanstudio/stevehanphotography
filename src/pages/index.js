@@ -4,7 +4,6 @@ import { Layout, Hero } from "../components"
 //import SEO from "../components/seo"
 
 const HomePage = ({ data }) => {
-  console.log(data);
   const {
     allAirtable: { nodes: portfolios }
   } = data

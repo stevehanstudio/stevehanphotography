@@ -8,7 +8,6 @@ import {GatsbyContext} from '../context/context'
 
 const Navbar = ({location}) => {
   const { isSidebarOpen, showSidebar, links } = useContext(GatsbyContext)
-  console.log("location", location);
 
   return <Wrapper location={location}>
     <div className="nav-center">
