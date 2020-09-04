@@ -4,6 +4,8 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 
+import cloudinaryImages from '../constants/cloudinaryImages'
+
 const Hero = ({ portfolios }) => {
   const images = portfolios.map(item => {
     const {
@@ -16,6 +18,8 @@ const Hero = ({ portfolios }) => {
     const image = localFiles[0].childImageSharp.fluid
     return image
   })
+  images.push(cloudinaryImages[0])
+  console.log(images)
 
   const [index, setIndex] = useState(0)
   useEffect(() => {
