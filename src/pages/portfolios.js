@@ -1,12 +1,21 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Layout, Portfolios } from "../components"
 //import SEO from "../components/seo"
 
 const HomePage = ({ data }) => {
-   const {
-      allAirtable: { nodes: portfolios }
-   } = data
+/*  const {
+    allCloudinaryAsset: { nodes: portfolios },
+  } = data*/
+
+  const {
+    allCloudinaryAsset: { edges: portfolios },
+  } = data
+
+/*  const {
+    allCloudinaryMedia: { nodes: portfolios },
+  } = data
+*/
    return (
       <Layout>
          <Portfolios portfolios={portfolios} />
@@ -16,27 +25,17 @@ const HomePage = ({ data }) => {
 
 export const query = graphql`
   {
-    allAirtable(
-      filter: {
-        table: {eq: "Portfolios"}} 
-    ) {
-      nodes {
-        id
-        data {
-          name
-          image {
-            localFiles {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+    allCloudinaryAsset {
+      edges {
+        node {
+          fluid {
+            ...CloudinaryAssetFluid
           }
         }
       }
     }
   }
 `
+
 
 export default HomePage

@@ -4,9 +4,16 @@ import { Layout, Hero } from "../components"
 //import SEO from "../components/seo"
 
 const HomePage = ({ data }) => {
+  console.log("data", data)
   const {
-    allAirtable: { nodes: portfolios }
+    allCloudinaryAsset: { edges: portfolios }
   } = data
+
+  console.log(portfolios)
+/*  const {
+    allCloudinaryMedia: {nodes: portfolios }
+  } = data*/
+
   return (
     <Layout location="/">
       <Hero portfolios={portfolios} />
@@ -16,27 +23,34 @@ const HomePage = ({ data }) => {
 
 export const query = graphql`
   {
-    allAirtable(
-      filter: {
-        table: {eq: "Portfolios"}} 
-    ) {
-      nodes {
-        id
-        data {
-          name
-          image {
-            localFiles {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+    allCloudinaryAsset {
+      edges {
+        node {
+          fluid {
+            ...CloudinaryAssetFluid
           }
         }
       }
     }
   }
 `
+
+/*
+export const query = graphql`
+  {
+    allCloudinaryAsset {
+      nodes {
+        fluid {
+          aspectRatio
+          base64
+          sizes
+          src
+          srcSet
+        }
+      }
+    }
+  }
+`*/
+//  ...CloudinaryAssetFluid
 
 export default HomePage

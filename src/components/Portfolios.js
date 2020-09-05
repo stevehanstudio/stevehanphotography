@@ -9,8 +9,10 @@ const Portfolios = ({ portfolios }) => {
       <div className=" section-center">
         {portfolios.map(item => {
           const { id } = item
-          const { name } = item.data
-          const fluid = item.data.image.localFiles[0].childImageSharp.fluid
+          const fluid = item.fluid
+          //const { name } = item.data
+          //const fluid = item.data.image.localFiles[0].childImageSharp.fluid
+          const name = "Temp"
           console.log(id, name, fluid)
           return <article key={id}>
             <div className="container">

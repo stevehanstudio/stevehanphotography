@@ -4,22 +4,17 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 
-import cloudinaryImages from '../constants/cloudinaryImages'
-
 const Hero = ({ portfolios }) => {
+  console.log("portfolios", portfolios)
   const images = portfolios.map(item => {
-    const {
-      data: {
-        image: {
-          localFiles
-        }
-      }
-    } = item
-    const image = localFiles[0].childImageSharp.fluid
+    console.log(item)
+//    const image = item.fluid
+    const {node: { fluid: image} } = item
+    console.log(image)
     return image
   })
-  images.push(cloudinaryImages[0])
-  console.log(images)
+
+  console.log("images", images);
 
   const [index, setIndex] = useState(0)
   useEffect(() => {

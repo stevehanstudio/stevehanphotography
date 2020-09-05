@@ -3,9 +3,10 @@ import BackgroundImage from "gatsby-background-image"
 import styled, { keyframes } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
+/*
 const query = graphql`
   {
-    file(relativePath: {eq: "mainBcg.jpg"}) {
+    file(relativePath: {eq: "../../static/mainBcg.jpg"}) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -14,17 +15,18 @@ const query = graphql`
     }
   }
 `
-
+*/
 const Background = ({ children, image }) => {
-  const {
+/*  const {
     file: {
       childImageSharp: { 
         fluid 
       }
     }
   } = useStaticQuery(query)
+*/  
   return <Wrapper>
-    <BackgroundImage Tag="div" fluid={image || fluid} className="bcg" preserveStackingContext={true}>
+    <BackgroundImage Tag="div" fluid={image} className="bcg" preserveStackingContext={true}>
       {children}
     </BackgroundImage>
   </Wrapper>
@@ -32,11 +34,11 @@ const Background = ({ children, image }) => {
 
 const fadeIn = keyframes`
       from{
-         background-color:rgb(255,255,255,0.2);
-//         background-color:rgb(0,0,0,0.8);
+//         background-color:rgb(255,255,255,0.2);
+         background-color:rgba(0,0,0,0.8);
       }
       to{
-        background-color:rgba(0,0,0,0.4);
+        background-color:rgba(0,0,0,0);
       }
       `
 

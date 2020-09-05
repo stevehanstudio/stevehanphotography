@@ -22,6 +22,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-transformer-cloudinary",
       options: {
@@ -29,10 +31,18 @@ module.exports = {
         apiKey: process.env.CLOUDINARY_API_KEY,
         apiSecret: process.env.CLOUDINARY_API_SECRET,
         uploadFolder: "gatsby-cloudinary",
+        overwriteExisiting: false,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+      },
+    },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -46,22 +56,6 @@ module.exports = {
           },
           {
             family: `Caveat`,
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-source-airtable`,
-      options: {
-        apiKey: process.env.GATSBY_AIRTABLE_API,
-        concurrency: 5,
-        tables: [
-          {
-            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
-            tableName: `Portfolios`,
-            mapping: {
-              image: `fileNode`,
-            },
           },
         ],
       },
