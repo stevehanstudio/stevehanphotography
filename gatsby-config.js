@@ -42,18 +42,23 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts-v2`,
       options: {
         fonts: [
           {
             family: `Roboto`,
-            variants: [`400`, `500`, `700`],
+            variable: true,
+            variants: [`200...900`],
           },
           {
             family: `Open Sans`,
+            variable: true,
+            variants: [`200...900`],
           },
           {
             family: `Caveat`,
+            variable: true,
+            variants: [`200...900`],
           },
         ],
       },
