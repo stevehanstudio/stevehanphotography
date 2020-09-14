@@ -8,8 +8,9 @@ const Hero = ({ portfolios }) => {
   console.log("portfolios", portfolios)
   const images = portfolios.map(item => {
     console.log(item)
-//    const image = item.fluid
-    const {node: { fluid: image} } = item
+    const image = item.fluid
+    //const {fluid: image } = item
+    //const {node: { fluid: image} } = item
     console.log(image)
     return image
   })

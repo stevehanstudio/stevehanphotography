@@ -1,7 +1,6 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-// const queries = require("./src/constants/algolia")
 module.exports = {
   siteMetadata: {
     title: `Steve Han Photography portfolio`,
@@ -30,8 +29,7 @@ module.exports = {
         cloudName: process.env.CLOUDINARY_CLOUD_NAME,
         apiKey: process.env.CLOUDINARY_API_KEY,
         apiSecret: process.env.CLOUDINARY_API_SECRET,
-        uploadFolder: "gatsby-cloudinary",
-        overwriteExisiting: false,
+        overwriteExisting: false,
       },
     },
     {

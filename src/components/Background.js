@@ -25,12 +25,40 @@ const Background = ({ children, image }) => {
     }
   } = useStaticQuery(query)
 */  
+
   return <Wrapper>
-    <BackgroundImage Tag="div" fluid={image} className="bcg" preserveStackingContext={true}>
+    <HeroBackgroundImage 
+      Tag="div" 
+      fluid={image} 
+      className="bcg" 
+      preserveStackingContext={true}    
+    >
       {children}
-    </BackgroundImage>
+    </HeroBackgroundImage>
   </Wrapper>
 }
+
+const HeroBackgroundImage = styled(BackgroundImage)`
+  width: 100%;
+  height: 100vh;
+  opacity: 1 !important;
+  background-repeat: no-repeat;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 1%,
+    rgba(0, 0, 0, 0.15) 3%,
+    rgba(0, 0, 0, 0.1) 4%,
+    rgba(0, 0, 0, 0.05) 5%,
+    rgba(0, 0, 0, 0) 7%,
+    rgba(0, 0, 0, 0.05) 92%,
+    rgba(0, 0, 0, 0.1) 94%,
+    rgba(0, 0, 0, 0.2) 96%,
+    rgba(0, 0, 0, 0.3) 98%,
+    rgba(0, 0, 0, 0.35) 99%,
+    rgba(0, 0, 0, 0.4)
+  );
+  background-size: cover;
+`
 
 const fadeIn = keyframes`
       from{
@@ -50,6 +78,7 @@ const Wrapper = styled.section`
     display: grid;
     place-items: center;
     animation: ${fadeIn} 2s ease-in-out 1 forwards;
+5)
   }
   .bcg::before {
     opacity: 1;

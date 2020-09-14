@@ -5,14 +5,14 @@ import { Layout, Hero } from "../components"
 
 const HomePage = ({ data }) => {
   console.log("data", data)
-  const {
+/*  const {
     allCloudinaryAsset: { edges: portfolios }
   } = data
-
+*/
   console.log(portfolios)
-/*  const {
-    allCloudinaryMedia: {nodes: portfolios }
-  } = data*/
+  const {
+    allCloudinaryAsset: {nodes: portfolios }
+  } = data
 
   return (
     <Layout location="/">
@@ -23,12 +23,10 @@ const HomePage = ({ data }) => {
 
 export const query = graphql`
   {
-    allCloudinaryAsset {
-      edges {
-        node {
-          fluid {
+    allCloudinaryAsset(filter: {fluid: {src: {regex: "/bcg-/"}}}) {
+      nodes {
+        fluid {
             ...CloudinaryAssetFluid
-          }
         }
       }
     }
