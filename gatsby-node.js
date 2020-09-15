@@ -1,30 +1,36 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path')
 
-// You can delete this file if you're not using it
+exports.createPages = async ({graphql, actions}) => {
+   const {createPage} = actions
 
-// Image Gallery Remark ?
+   const result = await graphql(`
+      {
+         allPortfoliosYaml {
+            nodes {
+               photos {
+                  caption
+                  name
+               }
+               slug
+               title
+            }
+         }
+      }
+   `)
 
-const { createFilePath } = require("gatsby-source-filesystem")
-
-exports.onCreateNode = ({node, getNode, actions}) => {
-   console.log("createNode", node.internal.type);
-   // Create slugs for each portfolio
-   if (node.internal === "File") {
-      //console.log(createFilePath({ node, getNode, basePath: `images/` }));
-
-      //const slug = createFilePath({ node, getNode, basePath: `images/` })
-      /*createNodeField({
-         node,
-         name: "slug",
-         value: slug
-      })*/
-   }
+   result.data.allPortfoliosYaml.nodes.forEach((node) => {
+      const {title, slug} = node
+      const {name, caption} = node.photos
+      console.log("createPage", node, title, slug, name, caption)
+      createPage({
+         path: `/portfolios/${title}`,
+         component: path.resolve('./src/templates/gallery-query.js'),
+         context: {
+            name: title,
+            slug: slug,
+            caption: caption
+         }
+      })
+   })
 }
 
-exports.createPages = ({graphql, actions}) => {
-   
-}

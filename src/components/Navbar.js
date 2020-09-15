@@ -24,14 +24,11 @@ const Navbar = ({location}) => {
       <ul className="nav-links">
         {links.map((link, index) => {
           const {url, label} = link
-          if (index !== 0) {
-            return (
-              <li key={index}>
-                <Link className="button" to={url}>{label}</Link>
-              </li>
-            )
-          }
-          return null
+          return (
+            <li key={index}>
+              <Link className="button" to={url}>{label}</Link>
+            </li>
+          )
         })}
       </ul>  
     </div>
@@ -96,7 +93,7 @@ const Wrapper = styled.nav`
     }
     .nav-links {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       max-width: 500px;
     }
     li {
@@ -105,7 +102,8 @@ const Wrapper = styled.nav`
     }
     button, .button {
       color: rgba(255,255,255,0.7);
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+//      color: rgba(200,200,200,0.7);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
       background: transparent;
       border: transparent;
       font-size: 1rem;

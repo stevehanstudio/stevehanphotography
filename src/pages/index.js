@@ -4,12 +4,6 @@ import { Layout, Hero } from "../components"
 //import SEO from "../components/seo"
 
 const HomePage = ({ data }) => {
-  console.log("data", data)
-/*  const {
-    allCloudinaryAsset: { edges: portfolios }
-  } = data
-*/
-  console.log(portfolios)
   const {
     allCloudinaryAsset: {nodes: portfolios }
   } = data

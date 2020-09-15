@@ -14,11 +14,33 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-yaml`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `portfolios`,
+        path: `${__dirname}/src/portfolios`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `bcg`,
+        path: `${__dirname}/src/images/bcg`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `fashion`,
+        path: `${__dirname}/src/images/fashion`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `restaurants`,
+        path: `${__dirname}/src/images/restaurants`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -33,12 +55,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-cloudinary`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-        apiKey: process.env.CLOUDINARY_API_KEY,
-        apiSecret: process.env.CLOUDINARY_API_SECRET,
-        resourceType: `image`,
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `static/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     {

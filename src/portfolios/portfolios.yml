@@ -1,0 +1,27 @@
+- title: fashion
+  slug: /fashion
+  photos:
+    - name: fashion-CharlestonPierceFashionShowPic6
+      caption: Charleston Pierce Fashion Show
+    - name: fashion-JessicaKateKnuvelder
+      caption: Jessica in designer Kate Knuvelder's chain mail head piece  
+    - name: fashion-KateKnuvelderBlackV5-12-12
+      caption: Model in designer Kate Knuvelder's chain mail head piece at Black V Fashion Show 5/12/12
+    - name: fashion-MichelleBenBW
+      caption: Models Michelle Grey and Ben 
+    - name: fashion-ScarlettLaceyBannister
+      caption: Model Scarlett Lash in designer Lacey Bannister's head piece
+    - name: fashion-ScarlettLaceyBannister2
+      caption: Model Scarlett Lash in designer Lacey Bannister's head piece
+- title: restaurants
+  slug: /restaurants
+  photos:
+    - name: restaurants-LaMar2
+      caption: Ahi Tuna at La Mar
+    - name: restaurants-LaMar3
+      caption: Appetizer at La Mar
+    - name: restaurants-ThirstyBearRestaurantInterior
+      caption: Thursty Bear Restaurant 
+
+
+
