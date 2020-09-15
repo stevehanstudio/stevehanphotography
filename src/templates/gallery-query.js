@@ -24,7 +24,10 @@ export default GalleryPage
 
 export const query = graphql`
   query($name: String) {
-    images: allFile(filter: { sourceInstanceName: {eq: $name} }) {
+    images: allFile(
+      filter: { sourceInstanceName: { eq: $name } }
+      sort: { fields: name, order: ASC }
+    ) {
       nodes {
         cloudinary: childCloudinaryAsset {
           fluid {

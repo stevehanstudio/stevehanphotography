@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Layout, Hero } from "../components"
-//import SEO from "../components/seo"
+import SEO from "../components/seo"
 
 const HomePage = ({ data }) => {
   const {
@@ -10,6 +10,7 @@ const HomePage = ({ data }) => {
 
   return (
     <Layout location="/">
+      <SEO title="Home | Steve Han Photography" />
       <Hero portfolios={portfolios} />
     </Layout>
   )

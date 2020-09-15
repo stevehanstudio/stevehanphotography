@@ -6,38 +6,50 @@ import { Link } from "gatsby"
 //import NavLink from "./NavLink"
 import {GatsbyContext} from '../context/context'
 
+const activeStyles = {
+  color: 'white',
+  opacity: 1,
+  textShadow: '0px 0px 8px 16px rgba(0,0,0,1)',
+}
+
 const Navbar = ({location}) => {
   const { isSidebarOpen, showSidebar, links } = useContext(GatsbyContext)
 
-  return <Wrapper location={location}>
-    <div className="nav-center">
-      <div className="nav-header">
-        <Link to="/">
-          <img src={logo} alt="Steve Han Photography logo"></img>
-        </Link>
-        {!isSidebarOpen &&
-          <button className="toggle-btn" onClick={showSidebar}>
-            <GoThreeBars />
-          </button>
-        }
+  return (
+    <Wrapper location={location}>
+      <div className="nav-center">
+        <div className="nav-header">
+          <Link to="/">
+            <img src={logo} alt="Steve Han Photography logo"></img>
+          </Link>
+          {!isSidebarOpen && (
+            <button className="toggle-btn" onClick={showSidebar}>
+              <GoThreeBars />
+            </button>
+          )}
+        </div>
+        <ul className="nav-links">
+          {links.map((link, index) => {
+            const { url, label } = link
+            return (
+              <li key={index}>
+                <Link className="button" to={url} activeStyle={activeStyles}>
+                  {label}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
       </div>
-      <ul className="nav-links">
-        {links.map((link, index) => {
-          const {url, label} = link
-          return (
-            <li key={index}>
-              <Link className="button" to={url}>{label}</Link>
-            </li>
-          )
-        })}
-      </ul>  
-    </div>
-  </Wrapper>
+    </Wrapper>
+  )
 }
+
 
 const Wrapper = styled.nav`
   position: relative;
-  background: ${({ location }) => (location === '/' ? 'transparent' : 'var(--clr-black)')};
+  background: ${({ location }) =>
+    location === "/" ? "transparent" : "var(--clr-black)"};
   z-index: 1;
   height: 5rem;
   display: flex;
@@ -48,7 +60,7 @@ const Wrapper = styled.nav`
     max-width: var(--max-width);
   }
   .nav-header {
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -100,10 +112,11 @@ const Wrapper = styled.nav`
       padding: 1rem 0;
       position: relative;
     }
-    button, .button {
-      color: rgba(255,255,255,0.7);
-//      color: rgba(200,200,200,0.7);
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    button,
+    .button {
+      color: rgba(255, 255, 255, 0.5);
+      //      color: rgba(200,200,200,0.7);
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
       background: transparent;
       border: transparent;
       font-size: 1rem;
@@ -116,8 +129,8 @@ const Wrapper = styled.nav`
       &:hover {
         color: var(--clr-white);
       }
-    }    
-}
+    }
+  }
 `
 
 export default Navbar

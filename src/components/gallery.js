@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react"
 import Layout from "./layout"
+import styled from "styled-components"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
 import { Box } from "theme-ui"
@@ -19,13 +20,13 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
     setViewerIsOpen(false)
   }
 
-  console.log("Photos", photos)
-  console.log("options", options)
+  //console.log("Photos", photos)
+  //console.log("options", options)
   
   const galleryPhotos = photos.map(photo => {
-    const width = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 3 : 4
-    const height = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 4 : 3
-    console.log(`width=${width}, height=${height}`)
+    //const width = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 3 : 4
+    //const height = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 4 : 3
+    // console.log(`width=${width}, height=${height}`)
     if (photo.cloudinary !== null && photo.cloudinary.fluid !== null) {   
       return {
         src: photo.cloudinary.fluid.src,
@@ -40,7 +41,7 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
     return undefined;
   }).filter(item => item !== undefined)
 
-  console.log("galleryPhotos!", galleryPhotos)
+  //console.log("galleryPhotos!", galleryPhotos)
 
   return (
     <Layout>
@@ -54,7 +55,7 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>
-              <Carousel
+              <StyledCarousel
                 currentIndex={currentImage}
                 views={galleryPhotos.map(photo => ({
                   ...photo,
@@ -69,3 +70,12 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
     </Layout>
   )
 }
+
+const StyledCarousel = styled(Carousel)`
+  .react-images__view {
+    width: 1000px;
+    height: 1000px;
+    max-height: 1000px;
+    max-width: 1000px;
+  }
+`

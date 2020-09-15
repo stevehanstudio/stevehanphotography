@@ -11,14 +11,17 @@ const StyledContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100vw;
-  height: 100vh;
+//  height: 100vh;
 `
 
 const StyledLink = styled(Link)`
+  position: relative;
   //  width: 300px;
   //  height: 250px;
   overflow: hidden;
-
+  float: left;
+  clear: both;
+  
   @media (min-width: 530px) {
     width: 100%;
     height: calc(100vw * 0.7);
@@ -41,19 +44,28 @@ const StyledImage = styled(Image)`
   object-fit: cover;
   overflow: hidden;
   transition: 1s;
+  background: black;
+  opacity: 0.5;
+  margin: 0;
+  padding: 0;
   &:hover {
     border: 2px solid blue;
     transform: scale(1.2);
+    opacity: 1;
   }
 `
 
 const StyledTitle = styled.h3`
+  position: absolute;
   color: white;
   font-weight: 500;
   text-transform: uppercase;
-  position: absolute;  
-  text-align: middle;
+  //  text-align: middle;
   align-content: center;
+  left: 50%;
+  margin-left: -4.4rem;
+  top: 50%;
+  margin-top: -1.8rem;
   z-index: 1;
 `
 
@@ -61,12 +73,12 @@ const StyledTitle = styled.h3`
 const Portfolios = () => {
   const data = useStaticQuery(graphql`
     query {
-      fashion: cloudinaryAsset(fluid: {src: {regex: "/fashion/"}}) {
+      fashion: cloudinaryAsset(fluid: {src: {regex: "/fashion-1/"}}) {
         fluid {
             ...CloudinaryAssetFluid
         }
       }
-      restaurants: cloudinaryAsset(fluid: {src: {regex: "/restaurants/"}}) {
+      restaurants: cloudinaryAsset(fluid: {src: {regex: "/restaurants-1/"}}) {
         fluid {
             ...CloudinaryAssetFluid
         }
@@ -78,8 +90,7 @@ const Portfolios = () => {
 
   return (
     <Layout>
-      <SEO title="Portfolios" />
-      <h1>Portfolios</h1>
+      <SEO title="Portfolios | Steve Han Photography" />
       <StyledContainer>
         {Object.keys(data).map(photo => (
           //<div>{JSON.stringify(data[photo])}</div>
@@ -89,7 +100,6 @@ const Portfolios = () => {
           </StyledLink>
         ))}
       </StyledContainer>
-      <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
 }

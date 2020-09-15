@@ -43,26 +43,11 @@ const HeroBackgroundImage = styled(BackgroundImage)`
   height: 100vh;
   opacity: 1 !important;
   background-repeat: no-repeat;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2) 1%,
-    rgba(0, 0, 0, 0.15) 3%,
-    rgba(0, 0, 0, 0.1) 4%,
-    rgba(0, 0, 0, 0.05) 5%,
-    rgba(0, 0, 0, 0) 7%,
-    rgba(0, 0, 0, 0.05) 92%,
-    rgba(0, 0, 0, 0.1) 94%,
-    rgba(0, 0, 0, 0.2) 96%,
-    rgba(0, 0, 0, 0.3) 98%,
-    rgba(0, 0, 0, 0.35) 99%,
-    rgba(0, 0, 0, 0.4)
-  );
   background-size: cover;
 `
 
 const fadeIn = keyframes`
       from{
-//         background-color:rgb(255,255,255,0.2);
          background-color:rgba(0,0,0,0.8);
       }
       to{
@@ -72,6 +57,7 @@ const fadeIn = keyframes`
 
 const Wrapper = styled.section`
   .bcg {
+    box-shadow: inset 0px 0px 180px 60px rgb(0,0,0,0.5);
     /* Must give it a height */
     min-height: 100vh;
     margin-top: -5rem;

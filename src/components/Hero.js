@@ -5,17 +5,17 @@ import { Link } from "gatsby"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 
 const Hero = ({ portfolios }) => {
-  console.log("portfolios", portfolios)
+  //console.log("portfolios", portfolios)
   const images = portfolios.map(item => {
-    console.log(item)
+    //console.log(item)
     const image = item.fluid
     //const {fluid: image } = item
     //const {node: { fluid: image} } = item
-    console.log(image)
+    //console.log(image)
     return image
   })
 
-  console.log("images", images);
+  //console.log("images", images);
 
   const [index, setIndex] = useState(0)
   useEffect(() => {
@@ -105,7 +105,7 @@ const Wrapper = styled.section`
     transform: translateY(-50%);
     font-size: 2.5rem;
     background: transparent;
-    color: var(--clr-white);
+    color: rgba(255, 255, 255, 0.2);
     border: transparent;
     cursor: pointer;
     transition: var(--transition);
@@ -117,7 +117,7 @@ const Wrapper = styled.section`
   }
   .next-btn:hover,
   .prev-btn:hover {
-    color: var(--clr-primary-5);
+    color: white;
   }
   .prev-btn {
     left: 0;
