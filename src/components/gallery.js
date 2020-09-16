@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react"
-import {graphql, useStaticQuery} from "gatsby"
+//import {graphql, useStaticQuery} from "gatsby"
 import Layout from "./layout"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"

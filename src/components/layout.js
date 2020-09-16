@@ -1,15 +1,15 @@
 import React, { useContext } from "react"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
-import Sidebar from "./Sidebar"
+import MobileMenu from "./MobileMenu"
 import { GatsbyContext } from '../context/context'
 
 const Layout = ({ location, children }) => {
-  const { isSidebarOpen } = useContext(GatsbyContext)
+  const { isMobileMenuOpen } = useContext(GatsbyContext)
   return (
     <>
       <Navbar location={location} />
-      {isSidebarOpen && <Sidebar /> }
+      {isMobileMenuOpen && <MobileMenu />}
       {children}
       <Footer location={location} />
     </>

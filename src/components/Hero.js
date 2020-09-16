@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Background from "./Background"
 import styled from "styled-components"
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 //import useKeyPress from "../hooks/useKeyPress"
 

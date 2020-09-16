@@ -1,31 +1,7 @@
 import React from "react"
 import BackgroundImage from "gatsby-background-image"
 import styled, { keyframes } from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
-
-/*
-const query = graphql`
-  {
-    file(relativePath: {eq: "../../static/mainBcg.jpg"}) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
-*/
 const Background = ({ children, image }) => {
-/*  const {
-    file: {
-      childImageSharp: { 
-        fluid 
-      }
-    }
-  } = useStaticQuery(query)
-*/  
-
   return <Wrapper>
     <HeroBackgroundImage 
       Tag="div" 

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, replace } from "gatsby"
+import { graphql } from "gatsby"
 import Gallery from "../components/gallery"
 
 const GalleryPage = ({ data, pageContext }) => {

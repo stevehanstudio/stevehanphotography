@@ -1,26 +1,32 @@
 import React, { useState, createContext } from "react"
-import links from "../constants/links"
+import { navLinks, socialLinks } from "../constants/links"
 
 const GatsbyContext = createContext()
 
 const GatsbyProvider = ({ children }) => {
-   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-   const showSidebar = () => {
-      console.log("showSidebar");
-      setIsSidebarOpen(true)
+   const showMobileMenu = () => {
+     console.log("showMobileMenu")
+     setIsMobileMenuOpen(true)
    }
 
-   const hideSidebar = () => {
-      setIsSidebarOpen(false)
+   const hideMobileMenu = () => {
+     setIsMobileMenuOpen(false)
    }
 
    return (
-      <GatsbyContext.Provider
-         value={{ isSidebarOpen, links, showSidebar, hideSidebar }}
-      >
-         {children}
-      </GatsbyContext.Provider>
+     <GatsbyContext.Provider
+       value={{
+         isMobileMenuOpen,
+         navLinks,
+         socialLinks,
+         showMobileMenu,
+         hideMobileMenu,
+       }}
+     >
+       {children}
+     </GatsbyContext.Provider>
    )
 }
 

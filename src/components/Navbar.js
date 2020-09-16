@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import styled from "styled-components"
 import logo from "../../static/SteveHanPhotography_logo.png"
 import { GoThreeBars } from "react-icons/go"
+import { MdClose } from "react-icons/md"
 import { Link } from "gatsby"
 //import NavLink from "./NavLink"
 import {GatsbyContext} from '../context/context'
@@ -13,7 +14,13 @@ const activeStyles = {
 }
 
 const Navbar = ({location}) => {
-  const { isSidebarOpen, showSidebar, links } = useContext(GatsbyContext)
+  const {
+    isMobileMenuOpen,
+    hideMobileMenu, 
+    showMobileMenu,
+    navLinks,
+    socialLinks,
+  } = useContext(GatsbyContext)
 
   return (
     <Wrapper location={location}>
@@ -22,29 +29,53 @@ const Navbar = ({location}) => {
           <Link to="/">
             <img src={logo} alt="Steve Han Photography logo"></img>
           </Link>
-          {!isSidebarOpen && (
-            <button className="toggle-btn" onClick={showSidebar}>
-              <GoThreeBars />
+          {!isMobileMenuOpen && (
+            <button className="toggle-btn" onClick={showMobileMenu}>
+              {hideMobileMenu && <GoThreeBars />}
+            </button>
+          )}
+          {isMobileMenuOpen && (
+            <button className="toggle-btn" onClick={hideMobileMenu}>
+              <MdClose className="mobile-menu-close-icon" />
             </button>
           )}
         </div>
-        <ul className="nav-links">
-          {links.map((link, index) => {
-            const { url, label } = link
-            return (
-              <li key={index}>
-                <Link className="button" to={url} activeStyle={activeStyles}>
-                  {label}
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
+        <div className="menu-links">
+          <ul className="nav-links">
+            {navLinks.map((navLink, index) => {
+              const { url, label } = navLink
+              return (
+                <li key={index}>
+                  <Link className="button" to={url} activeStyle={activeStyles}>
+                    {label}
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+          <ul className="social-links">
+            {socialLinks.map((socialLink, index) => {
+              const { url, label, Icon } = socialLink
+              console.log(label, Icon, url)
+              return (
+                <li key={index}>
+                  <a
+                    className="button"
+                    href={url}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    <Icon />
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </Wrapper>
   )
 }
-
 
 const Wrapper = styled.nav`
   position: relative;
@@ -54,12 +85,17 @@ const Wrapper = styled.nav`
   height: 5rem;
   display: flex;
   align-items: center;
+  margin: 0;
+  padding: 0;
   .nav-center {
     width: 90vw;
+    padding: 0;
     margin: 0 auto;
     max-width: var(--max-width);
+    height: 100%;
   }
   .nav-header {
+    height: 100%;
     color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
@@ -87,8 +123,10 @@ const Wrapper = styled.nav`
       }
     }
   }
-  .nav-links {
+  .nav-links,
+  .social-links {
     display: none;
+    height: 100%;
   }
   @media (min-width: 800px) {
     .nav-header {
@@ -103,14 +141,53 @@ const Wrapper = styled.nav`
       grid-gap: 0 4rem;
       align-items: center;
     }
+    .menu-links {
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 1000px;
+    }
     .nav-links {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       max-width: 500px;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 5px;
+      padding: 5px;
+      li {
+        height: 100%;
+        padding: 18px 0;
+        position: relative;
+      }
     }
-    li {
-      padding: 1rem 0;
-      position: relative;
+    .social-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 30px;
+      li {
+        padding: 5px;
+        margin-left: 15px;
+        margin-top: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        height: 30px;
+        width: 30px;
+        a {
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-top: 0px;
+          padding-bottom: 0px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          margin-left: 2px;
+          margin-right: 0px;
+        }
+        &:hover {
+          background: #3b5998;
+          color: white;
+          border-radius: 15px;
+        }
+      }
     }
     button,
     .button {
@@ -127,9 +204,27 @@ const Wrapper = styled.nav`
       text-transform: capitalize;
       position: relative;
       &:hover {
-        color: var(--clr-white);
+        color: white;
       }
     }
+  }
+
+  .mobile-menu-close-icon {
+    color: rgba(255, 255, 255, 0.6);
+    /*    color: #88add2;*/
+    background: transparent;
+    font-size: 2rem;
+    &:hover {
+      color: white;
+    }
+/*  &:hover {
+    color: rgba(255, 255, 255, 1);
+    //cursor: pointer;
+    //          color: #88add2;
+    .mobile-menu-close-icon {
+      color: white;
+      color: #0a2540;
+    }*/
   }
 `
 
