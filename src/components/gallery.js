@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react"
+import {graphql, useStaticQuery} from "gatsby"
 import Layout from "./layout"
-import styled from "styled-components"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
 import { Box } from "theme-ui"
@@ -27,13 +27,13 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
     //const width = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 3 : 4
     //const height = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 4 : 3
     // console.log(`width=${width}, height=${height}`)
-    if (photo.cloudinary !== null && photo.cloudinary.fluid !== null) {   
+    if (photo.cloudinary !== null && photo.cloudinary.thumbnail_fluid !== null) {   
       return {
-        src: photo.cloudinary.fluid.src,
-        width: photo.cloudinary.fluid.maxWidth,
-        height: photo.cloudinary.fluid.maxHeight,
-        sizes: photo.cloudinary.fluid.sizes,
-        srcSet: photo.cloudinary.fluid.srcSet,
+        src: photo.cloudinary.thumbnail_fluid.src,
+        width: photo.cloudinary.thumbnail_fluid.maxWidth,
+        height: photo.cloudinary.thumbnail_fluid.maxHeight,
+        sizes: photo.cloudinary.thumbnail_fluid.sizes,
+        srcSet: photo.cloudinary.thumbnail_fluid.srcSet,
         alt: photo.caption,
         title: photo.caption,
       }
@@ -41,7 +41,26 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
     return undefined;
   }).filter(item => item !== undefined)
 
-  //console.log("galleryPhotos!", galleryPhotos)
+  const lightboxPhotos = photos.map(photo => {
+    //const width = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 3 : 4
+    //const height = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 4 : 3
+    // console.log(`width=${width}, height=${height}`)
+    if (photo.cloudinary !== null && photo.cloudinary.lightbox_fluid !== null) {   
+      return {
+        src: photo.cloudinary.lightbox_fluid.src,
+        width: photo.cloudinary.lightbox_fluid.maxWidth,
+        height: photo.cloudinary.lightbox_fluid.maxHeight,
+        sizes: photo.cloudinary.lightbox_fluid.sizes,
+        srcSet: photo.cloudinary.lightbox_fluid.srcSet,
+        alt: photo.caption,
+        title: photo.caption,
+      }
+    }
+    return undefined;
+  }).filter(item => item !== undefined)
+
+  console.log("galleryPhotos!", galleryPhotos)
+  console.log("lightboxPhotos!", lightboxPhotos)
 
   return (
     <Layout>
@@ -55,9 +74,9 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>
-              <StyledCarousel
+              <Carousel
                 currentIndex={currentImage}
-                views={galleryPhotos.map(photo => ({
+                views={lightboxPhotos.map(photo => ({
                   ...photo,
                   srcset: photo.srcSet,
                   caption: photo.title,
@@ -71,11 +90,4 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
   )
 }
 
-const StyledCarousel = styled(Carousel)`
-  .react-images__view {
-    width: 1000px;
-    height: 1000px;
-    max-height: 1000px;
-    max-width: 1000px;
-  }
-`
+

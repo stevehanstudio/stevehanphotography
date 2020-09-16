@@ -1,18 +1,22 @@
 - title: fashion
   slug: /fashion
   photos:
-    - name: fashion-CharlestonPierceFashionShowPic6
-      caption: Charleston Pierce Fashion Show
+    - name: fashion-BenSammieKateKnuvelderKenChen
+      caption: Models Ben and Sammie in designers Ken Chen and jewelry designer Kate Knuvelder's chain mail necklace
+    - name: fashion-ScarlettLaceyBannister
+      caption: Model Scarlett Lash in designer Lacey Bannister's head dress
+    - name: fashion-ScarlettLaceyBannister2
+      caption: Model Scarlett Lash in designer Lacey Bannister's head dress
+    - name: fashion-CharlestonPierceFashionShow1
+      caption: Charleston Pierce Fashion Show - Evening wear
+    - name: fashion-CharlestonPierceFashionShow2
+      caption: Charleston Pierce Fashion Show - Swimwear
     - name: fashion-JessicaKateKnuvelder
       caption: Jessica in designer Kate Knuvelder's chain mail head piece  
     - name: fashion-KateKnuvelderBlackV5-12-12
       caption: Model in designer Kate Knuvelder's chain mail head piece at Black V Fashion Show 5/12/12
     - name: fashion-MichelleBenBW
       caption: Models Michelle Grey and Ben 
-    - name: fashion-ScarlettLaceyBannister
-      caption: Model Scarlett Lash in designer Lacey Bannister's head piece
-    - name: fashion-ScarlettLaceyBannister2
-      caption: Model Scarlett Lash in designer Lacey Bannister's head piece
 - title: restaurants
   slug: /restaurants
   photos:

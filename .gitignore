@@ -54,6 +54,9 @@ typings/
 # dotenv environment variable files
 .env*
 
+# VS code settings
+.vscode*
+
 # gatsby files
 .cache/
 public

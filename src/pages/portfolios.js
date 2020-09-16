@@ -45,7 +45,7 @@ const StyledImage = styled(Image)`
   overflow: hidden;
   transition: 1s;
   background: black;
-  opacity: 0.5;
+  opacity: 0.7;
   margin: 0;
   padding: 0;
   &:hover {
