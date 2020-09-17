@@ -6,12 +6,52 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+// Query for the 1st photo in each portfolio
+const Portfolios = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      fashion: cloudinaryAsset(fluid: {src: {regex: "/fashion-1/"}}) {
+        fluid {
+            ...CloudinaryAssetFluid
+        }
+      }
+      restaurants: cloudinaryAsset(fluid: {src: {regex: "/restaurants-1/"}}) {
+        fluid {
+            ...CloudinaryAssetFluid
+        }
+      }
+    }
+  `)
+
+  console.log("Portfolios", data)
+
+  return (
+    <Layout>
+      <SEO title="Portfolios | Steve Han Photography" />
+      <StyledContainer>
+        {Object.keys(data).map(photo => (
+          //<div>{JSON.stringify(data[photo])}</div>
+          <StyledLink key={photo} to={`${photo}/`}>
+            <StyledTitle>{photo}</StyledTitle>
+            <StyledImage fluid={data[photo].fluid} />
+          </StyledLink>
+        ))}
+      </StyledContainer>
+    </Layout>
+  )
+}
+
+export default Portfolios
+
 const StyledContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 100vw;
-//  height: 100vh;
+  //  height: 100vh;
+  @media (min-width: 530px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -21,7 +61,7 @@ const StyledLink = styled(Link)`
   overflow: hidden;
   float: left;
   clear: both;
-  
+
   @media (min-width: 530px) {
     width: 100%;
     height: calc(100vw * 0.7);
@@ -68,41 +108,3 @@ const StyledTitle = styled.h3`
   margin-top: -1.8rem;
   z-index: 1;
 `
-
-// Query for the 1st photo in each portfolio
-const Portfolios = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      fashion: cloudinaryAsset(fluid: {src: {regex: "/fashion-1/"}}) {
-        fluid {
-            ...CloudinaryAssetFluid
-        }
-      }
-      restaurants: cloudinaryAsset(fluid: {src: {regex: "/restaurants-1/"}}) {
-        fluid {
-            ...CloudinaryAssetFluid
-        }
-      }
-    }
-  `)
-
-  console.log("Portfolios", data)
-
-  return (
-    <Layout>
-      <SEO title="Portfolios | Steve Han Photography" />
-      <StyledContainer>
-        {Object.keys(data).map(photo => (
-          //<div>{JSON.stringify(data[photo])}</div>
-          <StyledLink key={photo} to={`${photo}/`}>
-            <StyledTitle>{photo}</StyledTitle>
-            <StyledImage fluid={data[photo].fluid} />
-          </StyledLink>
-        ))}
-      </StyledContainer>
-    </Layout>
-  )
-}
-
-export default Portfolios
-

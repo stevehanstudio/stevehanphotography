@@ -29,16 +29,50 @@ const Portfolios = ({ portfolios }) => {
 }
 
 const Wrapper = styled.section`
+  display: block;
   margin-top: 0;
+  width: 100vw;
+  height: 600px;
+  min-height: 600px;
+  max-height: 600px;
+  background: blue;
   .container {
+    /*    display: flex;
+    flex-direction: column;*/
+    background: blue;
     margin-top: 0;
     /*margin-top: 4rem;*/
+    width: 100vw;
     max-width: 100%;
+    height: 500px;
     /*    max-width: var(--max-width);*/
     display: grid;
+    grid-template-columns: 1fr;
     gap: 0;
     /* safari workaround */
     grid-gap: 0;
+    @media (min-width: 768px) {
+      .img {
+        /*height: 15rem;*/
+        height: auto;
+      }
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 992px) {
+      .img {
+        /*        height: 12.5rem;*/
+        height: auto;
+      }
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @media (min-width: 1200px) {
+      .img {
+        /*        height: 15rem;*/
+        height: auto;
+      }
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .img {
       /*      height: 10rem;
       transition: var(--transition);*/
@@ -56,7 +90,7 @@ const Wrapper = styled.section`
       border: 2px solid white;
       /*      box-shadow: var(--dark-shadow);*/
     }
-    */ .img-container {
+    .img-container {
       /*      width: 33%;
       max-width: 33%;*/
       perspective: 1300px;
@@ -84,27 +118,6 @@ const Wrapper = styled.section`
       &:hover .info {
         color: rgba(255, 255, 255, 1);
       }
-    }
-    @media (min-width: 768px) {
-      .img {
-        /*height: 15rem;*/
-        height: auto;
-      }
-      grid-template-columns: 1fr 1fr;
-    }
-    @media (min-width: 992px) {
-      .img {
-        /*        height: 12.5rem;*/
-        height: auto;
-      }
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-    @media (min-width: 1200px) {
-      .img {
-        /*        height: 15rem;*/
-        height: auto;
-      }
-      grid-template-columns: 1fr 1fr 1fr;
     }
   }
   a {

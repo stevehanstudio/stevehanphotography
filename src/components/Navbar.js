@@ -1,11 +1,9 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 import logo from "../../static/SteveHanPhotography_logo.png"
-import { GoThreeBars } from "react-icons/go"
-import { MdClose } from "react-icons/md"
 import { Link } from "gatsby"
-//import NavLink from "./NavLink"
 import {GatsbyContext} from '../context/context'
+import HamburgerIcon from "./HamburgerIcon"
 
 const activeStyles = {
   color: 'white',
@@ -15,9 +13,6 @@ const activeStyles = {
 
 const Navbar = ({location}) => {
   const {
-    isMobileMenuOpen,
-    hideMobileMenu, 
-    showMobileMenu,
     navLinks,
     socialLinks,
   } = useContext(GatsbyContext)
@@ -27,18 +22,13 @@ const Navbar = ({location}) => {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <img src={logo} alt="Steve Han Photography logo"></img>
+            <img
+              className="nav-header-show"
+              src={logo}
+              alt="Steve Han Photography logo"
+            ></img>
           </Link>
-          {!isMobileMenuOpen && (
-            <button className="toggle-btn" onClick={showMobileMenu}>
-              {hideMobileMenu && <GoThreeBars />}
-            </button>
-          )}
-          {isMobileMenuOpen && (
-            <button className="toggle-btn" onClick={hideMobileMenu}>
-              <MdClose className="mobile-menu-close-icon" />
-            </button>
-          )}
+          <HamburgerIcon className="hideHamburgerIcon" />
         </div>
         <div className="menu-links">
           <ul className="nav-links">
@@ -92,7 +82,7 @@ const Wrapper = styled.nav`
     padding: 0;
     margin: 0 auto;
     max-width: var(--max-width);
-    height: 100%;
+    /*height: 100%;*/
   }
   .nav-header {
     height: 100%;
@@ -128,7 +118,7 @@ const Wrapper = styled.nav`
     display: none;
     height: 100%;
   }
-  @media (min-width: 800px) {
+  @media (min-width: 842px) {
     .nav-header {
       .toggle-btn {
         display: none;
@@ -151,7 +141,7 @@ const Wrapper = styled.nav`
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       max-width: 500px;
-      border-right: 1px solid rgba(255, 255, 255, 0.3);
+/*      border-right: 1px solid rgba(255, 255, 255, 0.3);*/
       margin: 5px;
       padding: 5px;
       li {

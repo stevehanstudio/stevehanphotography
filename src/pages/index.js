@@ -2,6 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Layout, Hero } from "../components"
 import SEO from "../components/seo"
+//import HamburgerIcon from '../components/HamburgerIcon'
+//import "./style.css"
 
 const HomePage = ({ data }) => {
   const {

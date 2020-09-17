@@ -1,4 +1,5 @@
-import { MdHome, MdContactMail } from "react-icons/md"
+import { AiFillHome } from "react-icons/ai"
+import { MdContactMail } from "react-icons/md"
 import {
   RiFacebookFill,
   RiInstagramFill,
@@ -11,7 +12,7 @@ import FcAbout from "../../static/FcAbout"
 
 export const navLinks = [
   {
-    Icon: MdHome,
+    Icon: AiFillHome,
     page: "home",
     label: "home",
     url: "/",
