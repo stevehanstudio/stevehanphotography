@@ -18,7 +18,7 @@ const Wrapper = styled.footer`
   display: grid;
   place-items: center;
   background: ${({ location }) =>
-    location === "/" ? "transparent" : "var(--clr-black)"};
+    location === "/" ? "transparent" : "black"};
   //background: transparent;
   //opacity: 0.8;
   //  background: var(--clr-black);

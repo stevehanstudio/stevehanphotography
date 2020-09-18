@@ -4,8 +4,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Steve Han Photography portfolio`,
-    description: `Photography and video porftolio built using React, Gatsby, Airtable, Gatsby Background Image plugin and  React Context API. Styled using Styled-Components. `,
-    author: `@stevehan`,
+    description: `Photography and video portfolio site built using React, Gatsby, Cloudinary, Gatsby Background Image, Gatsby Transformer Cloudinary plugins and React Context API. Styled using Styled-Components. `,
+    author: `Steve Han`,
     titleTemplate: `%s | Steve Han Photography`,
     url: `https://gatsby-airtable-design-project.netlify.app/`,
     image: `mainBcg.png`,

@@ -104,12 +104,13 @@ const Wrapper = styled.nav`
       font-size: 1.5rem;
       border-radius: 2rem;
       border: transparent;
-      color: var(--clr-white);
+      color: white;
       background: transparent;
       cursor: pointer;
-      transition: var(--transition);
+      transition: all 0.3s linear;
       &:hover {
-        background: var(--clr-primary-3);
+        /*        background: var(--clr-primary-3);*/
+        background: hsl(21, 81%, 29%);
       }
     }
   }
@@ -141,7 +142,7 @@ const Wrapper = styled.nav`
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       max-width: 500px;
-/*      border-right: 1px solid rgba(255, 255, 255, 0.3);*/
+      /*      border-right: 1px solid rgba(255, 255, 255, 0.3);*/
       margin: 5px;
       padding: 5px;
       li {
@@ -207,7 +208,7 @@ const Wrapper = styled.nav`
     &:hover {
       color: white;
     }
-/*  &:hover {
+    /*  &:hover {
     color: rgba(255, 255, 255, 1);
     //cursor: pointer;
     //          color: #88add2;

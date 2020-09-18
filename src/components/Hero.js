@@ -104,7 +104,7 @@ const Wrapper = styled.section`
   article {
     width: 85vw;
     max-width: 800px;
-    color: var(--clr-white);
+    color: white;
     text-align: center;
     h1 {
       text-transform: uppercase;
@@ -118,18 +118,18 @@ const Wrapper = styled.section`
     }
     a {
       background: transparent;
-      border: 2px solid var(--clr-white);
+      border: 2px solid white;
       padding: 0.25rem 1rem;
       text-transform: capitalize;
       letter-spacing: 5px;
-      color: var(--clr-white);
+      color: white;
       font-size: 1rem;
       cursor: pointer;
-      transition: var(--transition);
+      transition: all 0.3s linear;
     }
     a:hover {
-      background: var(--clr-white);
-      color: var(--clr-black);
+      background: white;
+      color: black;
     }
     @media (min-width: 800px) {
       a {
@@ -151,7 +151,7 @@ const Wrapper = styled.section`
     color: rgba(255, 255, 255, 0.2);
     border: transparent;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s linear;
     @media (min-width: 800px) {
       & {
         font-size: 4.5rem;
@@ -193,7 +193,7 @@ const Wrapper = styled.section`
       border-radius: 50%;
       background: transparent;
       margin: 0 1rem;
-      border: 2px solid var(--clr-white);
+      border: 2px solid white;
       @media (min-width: 800px) {
         & {
           height: 1rem;
@@ -202,7 +202,7 @@ const Wrapper = styled.section`
       }
     }
     span.active {
-      background: var(--clr-white);
+      background: white;
     }
   }
 `

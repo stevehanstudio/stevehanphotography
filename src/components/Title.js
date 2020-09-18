@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import _ from "lodash"
 
 const Title = ({ title }) => {
   return (
     <Wrapper>
-      <h2>{title}</h2>
+      <h2>{_.capitalize(title)}</h2>
     </Wrapper>
   ) 
 }
@@ -18,7 +19,8 @@ const Wrapper = styled.div`
     font-weight: 500;
     span {
       font-size: 0.85em;
-      color: var(--clr-primary-5);
+      color: grey;
+/*      color: var(--clr-primary-5);*/
       margin-right: 1rem;
       font-weight: 700;
     }

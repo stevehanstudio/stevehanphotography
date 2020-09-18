@@ -27,7 +27,7 @@ const Portfolios = () => {
 
   return (
     <Layout>
-      <SEO title="Portfolios | Steve Han Photography" />
+      <SEO title="All Portfolios" />
       <StyledContainer>
         {Object.keys(data).map(photo => (
           //<div>{JSON.stringify(data[photo])}</div>

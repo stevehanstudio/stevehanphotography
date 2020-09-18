@@ -1,6 +1,7 @@
 import React from "react"
 import BackgroundImage from "gatsby-background-image"
 import styled, { keyframes } from "styled-components"
+
 const Background = ({ children, image }) => {
   return <Wrapper>
     <HeroBackgroundImage 

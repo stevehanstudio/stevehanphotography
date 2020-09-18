@@ -4,7 +4,7 @@ import Title from "./Title"
 
 const About = () => {
   return <Wrapper className="section">
-    <Title title="About me" />
+    <Title title="About Me" />
     <h6>Steve Han Bio</h6>
     <div className="section">
 

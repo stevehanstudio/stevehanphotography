@@ -20,12 +20,14 @@
 - title: restaurants
   slug: /restaurants
   photos:
-    - name: restaurants-LaMar2
-      caption: Ahi Tuna at La Mar
-    - name: restaurants-LaMar3
-      caption: Appetizer at La Mar
-    - name: restaurants-ThirstyBearRestaurantInterior
-      caption: Thursty Bear Restaurant 
+    - name: restaurants-1-LaMar
+      caption: Salmon at La Mar Cebicheria Peruana
+    - name: restaurants-2-LaMar2
+      caption: Ahi Tuna at La Mar Cebicheria Peruana
+    - name: restaurants-3-LaMar3
+      caption: Appetizer at La Mar Cebicheria Peruana
+    - name: restaurants-4-ThirstyBearRestaurantInterior
+      caption: Thursty Bear Brewing Company restaurant interior
 
 
 

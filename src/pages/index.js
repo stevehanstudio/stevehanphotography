@@ -2,8 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Layout, Hero } from "../components"
 import SEO from "../components/seo"
-//import HamburgerIcon from '../components/HamburgerIcon'
-//import "./style.css"
 
 const HomePage = ({ data }) => {
   const {
@@ -12,7 +10,7 @@ const HomePage = ({ data }) => {
 
   return (
     <Layout location="/">
-      <SEO title="Home | Steve Han Photography" />
+      <SEO title="Home" />
       <Hero portfolios={portfolios} />
     </Layout>
   )
@@ -29,23 +27,5 @@ export const query = graphql`
     }
   }
 `
-
-/*
-export const query = graphql`
-  {
-    allCloudinaryAsset {
-      nodes {
-        fluid {
-          aspectRatio
-          base64
-          sizes
-          src
-          srcSet
-        }
-      }
-    }
-  }
-`*/
-//  ...CloudinaryAssetFluid
 
 export default HomePage

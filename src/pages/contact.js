@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const Contact = () => {
    return (
      <Layout>
-       <SEO title="Contact | Steve Han Photography" />
+       <SEO title="Contact" />
        <Wrapper>
          <h2>Contact Me</h2>
          <form action="POST" data-netlify="true">

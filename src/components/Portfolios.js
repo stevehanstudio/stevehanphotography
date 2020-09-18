@@ -82,13 +82,9 @@ const Wrapper = styled.section`
       animation-name: img-load;
       animation-duration: 650ms;
       transform-style: preserve-3d;
-      /*  box-shadow: var(--light-shadow);
-      border-radius: var(--radius);
-      transition: var(--transition);*/
     }
     article:hover {
       border: 2px solid white;
-      /*      box-shadow: var(--dark-shadow);*/
     }
     .img-container {
       /*      width: 33%;
@@ -106,12 +102,12 @@ const Wrapper = styled.section`
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
-        transition: var(--transition);
+        transition: all 0.3s linear;
         color: rgba(255, 255, 255, 0.75);
         text-align: center;
         p {
           margin-bottom: 0.5rem;
-          color: var(--clr-white);
+          color: white;
           text-transform: uppercase;
         }
       }

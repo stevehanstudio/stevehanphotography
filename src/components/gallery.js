@@ -4,7 +4,9 @@ import Layout from "./layout"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
 import { Box } from "theme-ui"
-//import SEO from "./seo"
+import Title from "./Title"
+import SEO from "./seo"
+import _ from "lodash"
 
 export default ({ name="fashion", options={margin: 5, direction: "row"}, photos }) => {
   const [currentImage, setCurrentImage] = useState(0)
@@ -59,11 +61,13 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
     return undefined;
   }).filter(item => item !== undefined)
 
-  console.log("galleryPhotos!", galleryPhotos)
-  console.log("lightboxPhotos!", lightboxPhotos)
+  //console.log("galleryPhotos!", galleryPhotos)
+  //console.log("lightboxPhotos!", lightboxPhotos)
 
   return (
     <Layout>
+      <SEO title={`${_.capitalize(name)} Portfolio`} />
+      <Title title={name} />
       <Box sx={{ p: `${options.margin}px` }}>
         <Gallery
           photos={galleryPhotos}
@@ -89,5 +93,4 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
     </Layout>
   )
 }
-
 

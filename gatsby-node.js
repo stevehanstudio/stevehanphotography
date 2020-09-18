@@ -21,7 +21,7 @@ exports.createPages = async ({graphql, actions}) => {
    result.data.allPortfoliosYaml.nodes.forEach((node) => {
       const {title, slug} = node
       const {name, caption} = node.photos
-      console.log("createPage", node, title, slug, name, caption)
+//      console.log("createPage", node, title, slug, name, caption)
       createPage({
          path: `/portfolios/${title}`,
          component: path.resolve('./src/templates/gallery-query.js'),

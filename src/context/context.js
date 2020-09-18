@@ -1,7 +1,6 @@
 import React, { useState, createContext } from "react"
 import { navLinks, socialLinks } from "../constants/links"
 
-
 const defaultState = {
   isMobileMenuOpen: false,
   navLinks: [],
@@ -9,17 +8,7 @@ const defaultState = {
   showMobileMenu: () => {},
   hideMobileMenu: () => {},
 }
-/*
-  togglePlayer: () => {},
-  currentlyPlayingSoundCloudTrack: "",
-  isPlaying: false,
-  handleDrawerOpen: () => {},
-  handleDrawerClose: () => {},
-  drawerOpen: false,
-}
 
-const PlayerContext = React.createContext(defaultState)
-*/
 // without defaultState it runs locally in develop but not on build
 const GatsbyContext = createContext(defaultState)
 

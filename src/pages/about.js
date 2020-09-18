@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 const HomePage = () => {
    return (
      <Layout>
-       <SEO title="About Me | Steve Han Photography" />
+       <SEO title="About Me" />
        <About />
      </Layout>
    )
