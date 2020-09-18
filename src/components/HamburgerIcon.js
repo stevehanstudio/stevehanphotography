@@ -9,7 +9,7 @@ const HamburgerIcon = () => {
     hideMobileMenu 
   } = useContext(GatsbyContext)
 
-  console.log("HamburgerIcon isMobileMenuOpen", isMobileMenuOpen)
+  //console.log("HamburgerIcon isMobileMenuOpen", isMobileMenuOpen)
   return (
     <MenuButton
       role="button"

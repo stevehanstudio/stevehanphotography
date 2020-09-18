@@ -8,19 +8,19 @@ const GalleryPage = ({ data, pageContext }) => {
   const photosWithCaption = photos.map(photo => {
     data.portfoliosYaml.photos.map(yamlPhoto => {
       const photoNameWithoutIndex = photo.name.replace(/fashion-(\d+)-/, "fashion-")
-      console.log(
+/*      console.log(
         `Searching caption: photo.name=${photo.name}, photoNameWithoutIndex=${photoNameWithoutIndex}, yamlPhoto.name=${yamlPhoto.name}, yamlPhoto.caption=${yamlPhoto.caption}`
-      )
+      )*/
       if (photoNameWithoutIndex === yamlPhoto.name) {
         photo.caption = yamlPhoto.caption
-        console.log("Added caption", photo.name, photo.caption)
+        //console.log("Added caption", photo.name, photo.caption)
         return true
       }
       return false
     })
     return photo
   })   
-  console.log("photosWithCaption", photosWithCaption)
+  //console.log("photosWithCaption", photosWithCaption)
   return (
       <Gallery name={name} photos={photosWithCaption} />
   )

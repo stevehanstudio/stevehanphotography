@@ -10,6 +10,7 @@ module.exports = {
     url: `https://gatsby-airtable-design-project.netlify.app/`,
     image: `mainBcg.png`,
     twitterUsername: `@stevehanphoto`,
+    siteUrl: `http://localhost:9000`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -86,6 +87,21 @@ module.exports = {
             variants: [`200...900`],
           },
         ],
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-178415099-1`,
+        head: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: ``,
+        includeInDevelopment: true,
       },
     },
   ],

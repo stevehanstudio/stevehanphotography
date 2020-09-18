@@ -5,15 +5,15 @@ import {GatsbyContext} from "../context/context"
 
 const MobileMenu = ({location}) => {
   const {navLinks, socialLinks, isMobileMenuOpen, hideMobileMenu} = useContext(GatsbyContext)
-  console.log("location", location)
-  console.log("isMobileMenuOpen", isMobileMenuOpen)
+  //console.log("location", location)
+  //console.log("isMobileMenuOpen", isMobileMenuOpen)
   return (
     <Wrapper location={location} isMobileMenuOpen={isMobileMenuOpen}>
       <div className="container">
         <div className="links">
           {navLinks.map((navLink, index) => {
             const { url, label, Icon } = navLink
-            console.log("Mobile Nav Menu", label, Icon, url)
+            //console.log("Mobile Nav Menu", label, Icon, url)
             return (
               <Link className="button" to={url} key={index} onClick={hideMobileMenu}>
                 <Icon className="icons"/>

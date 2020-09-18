@@ -23,7 +23,7 @@ const Portfolios = () => {
     }
   `)
 
-  console.log("Portfolios", data)
+  //console.log("Portfolios", data)
 
   return (
     <Layout>
