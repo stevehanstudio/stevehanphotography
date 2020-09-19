@@ -3,7 +3,7 @@ import Background from "./Background"
 import styled from "styled-components"
 //import { Link } from "gatsby"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
-//import useKeyPress from "../hooks/useKeyPress"
+import useKeyPress from "../hooks/useKeyPress"
 
 const Hero = ({ portfolios }) => {
   //console.log("portfolios", portfolios)
@@ -28,76 +28,40 @@ const Hero = ({ portfolios }) => {
       setIndex(0)
     }
   }, [index, images])
-/*
-  const handlePrev = () => {
-    console.log("handlePrev")
-    setIndex(index - 1)
-  }
 
-  const handleNext = () => {
-    console.log("handleNext")
-    setIndex(index + 1)
-  }
-
-  const [keyPressed, setKeyPressed] = useState(false)
-
-  // If pressed key is our target key then set to true
-  function downHandler({ key }) {
+  useKeyPress(key => {
     if (key === "ArrowLeft") {
-      handlePrev()
-      setKeyPressed(true)
+      setIndex(index - 1)
     }
     else if (key === "ArrowRight") {
-      handleNext()
-      setKeyPressed(true)
+      setIndex(index + 1)
     }
-  }
+  })
 
-  // If released key is our target key then set to false
-  const upHandler = ({ key }) => {
-    if (key === "ArrowLeft") {
-      setKeyPressed(false)
-    }
-    else if (key === "ArrowRight") {
-      setKeyPressed(false)
-    }
-  }
-
-  // Add event listeners
-  useEffect(() => {
-    window.addEventListener("keydown", downHandler)
-    window.addEventListener("keyup", upHandler)
-    // Remove event listeners on cleanup
-    return () => {
-      window.removeEventListener("keydown", downHandler)
-      window.removeEventListener("keyup", upHandler)
-    }
-  }, []) // Empty array ensures that effect is only run on mount and unmount
-*/
-    return (
-      <Wrapper>
-        <Background image={images[index]}></Background>
-        {/*        <button className="prev-btn" onClick={() => handlePrev()}>*/}
-        <button className="prev-btn" onClick={() => setIndex(index - 1)}>
-          <FiChevronLeft />
-        </button>
-        {/*<button className="next-btn" onClick={() => handleNext()}>*/}
-        <button className="next-btn" onClick={() => setIndex(index + 1)}>
-          <FiChevronRight />
-        </button>
-        <div className="dots">
-          {images.map((_, btnIndex) => {
-            return (
-              <span
-                key={btnIndex}
-                onClick={() => setIndex(btnIndex)}
-                className={index === btnIndex ? "active" : undefined}
-              ></span>
-            )
-          })}
-        </div>
-      </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <Background image={images[index]}></Background>
+      {/*        <button className="prev-btn" onClick={() => handlePrev()}>*/}
+      <button className="prev-btn" onClick={() => setIndex(index - 1)}>
+        <FiChevronLeft />
+      </button>
+      {/*<button className="next-btn" onClick={() => handleNext()}>*/}
+      <button className="next-btn" onClick={() => setIndex(index + 1)}>
+        <FiChevronRight />
+      </button>
+      <div className="dots">
+        {images.map((_, btnIndex) => {
+          return (
+            <span
+              key={btnIndex}
+              onClick={() => setIndex(btnIndex)}
+              className={index === btnIndex ? "active" : undefined}
+            ></span>
+          )
+        })}
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`

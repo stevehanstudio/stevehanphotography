@@ -11,7 +11,7 @@ const About = () => {
           This purpose of this website is to showcase my journey as a
           photographer and my experiences and showcase the images that will the most memorable in my journey.
         </p>
-        <h4>About Me</h4>
+        <h3>About Me</h3>
         <p>
           My journey as a photographer started with my travels, photographing friends, and documenting the trips and experiences.
         </p>
@@ -20,26 +20,23 @@ const About = () => {
   )
 }
 const Wrapper = styled.section`
-  .section-center {
+  .section {
     margin-top: 4rem;
-    display: grid;
-    gap: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.1rem;
+    max-width: 1000px;
     /* safari workaround */
-    grid-gap: 2rem;
-    .icon {
-      font-size: 4rem;
-      color: var(--clr-primary-5);
-      margin-bottom: 1rem;
-    }
-    h4 {
+    h3 {
       text-transform: uppercase;
       font-weight: 500;
     }
     p {
-      color: var(--clr-grey-3);
-      max-width: 35em;
+      font-size: 1.1rem;
+      line-height: 2rem;
+      color: lightgrey;
     }
-    @media (min-width: 768px) {
+/*    @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
     @media (min-width: 992px) {
@@ -47,7 +44,7 @@ const Wrapper = styled.section`
     }
     @media (min-width: 1200px) {
       grid-template-columns: repeat(4, 1fr);
-    }
+    }*/
   }
 `
 export default About

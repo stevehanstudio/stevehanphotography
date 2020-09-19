@@ -1,38 +1,33 @@
-// Source: https://usehooks.com/useKeyPress/
+// Source https://medium.com/better-programming/create-a-typing-game-with-react-hooks-usekeypress-and-faker-28bbc7919820
+// Modified downHandler because original checks that key length is equal to one,
+// and ArrowLeft and ArrowRight are 9 and 10 charazters long.
+ 
+import { useState, useEffect } from 'react';
 
-import React, { useState, useEffect } from "react"
+const useKeyPress = callback => {
+   const [keyPressed, setKeyPressed] = useState();
 
-// Hook
-function useKeyPress(targetKey) {
-  // State for keeping track of whether key is pressed
-  const [keyPressed, setKeyPressed] = useState(false)
+   useEffect(() => {
+      const downHandler = ({ key }) => {
+         if (keyPressed !== key) {
+            setKeyPressed(key);
+            callback && callback(key);
+         }
+      };
 
-  // If pressed key is our target key then set to true
-  function downHandler({ key }) {
-    if (key === targetKey) {
-      setKeyPressed(true)
-    }
-  }
+      const upHandler = () => {
+         setKeyPressed(null);
+      };
 
-  // If released key is our target key then set to false
-  const upHandler = ({ key }) => {
-    if (key === targetKey) {
-      setKeyPressed(false)
-    }
-  }
+      window.addEventListener('keydown', downHandler);
+      window.addEventListener('keyup', upHandler);
 
-  // Add event listeners
-  useEffect(() => {
-    window.addEventListener("keydown", downHandler)
-    window.addEventListener("keyup", upHandler)
-    // Remove event listeners on cleanup
-    return () => {
-      window.removeEventListener("keydown", downHandler)
-      window.removeEventListener("keyup", upHandler)
-    }
-  }, []) // Empty array ensures that effect is only run on mount and unmount
+      return () => {
+         window.removeEventListener('keydown', downHandler);
+         window.removeEventListener('keyup', upHandler);
+      };
+   });
+   return keyPressed;
+};
 
-  return keyPressed
-}
-
-export default useKeyPress
+export default useKeyPress;
