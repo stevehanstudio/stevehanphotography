@@ -13,13 +13,14 @@ exports.createPages = async ({graphql, actions}) => {
                }
                slug
                title
+               description
             }
          }
       }
    `)
 
    result.data.allPortfoliosYaml.nodes.forEach((node) => {
-      const {title, slug} = node
+      const {title, slug, description} = node
       const {name, caption} = node.photos
 //      console.log("createPage", node, title, slug, name, caption)
       createPage({
@@ -28,7 +29,8 @@ exports.createPages = async ({graphql, actions}) => {
          context: {
             name: title,
             slug: slug,
-            caption: caption
+            caption: caption,
+            description: description
          }
       })
    })

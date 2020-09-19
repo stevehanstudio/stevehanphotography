@@ -28,7 +28,7 @@ const Hero = ({ portfolios }) => {
       setIndex(0)
     }
   }, [index, images])
-
+/*
   const handlePrev = () => {
     console.log("handlePrev")
     setIndex(index - 1)
@@ -73,16 +73,16 @@ const Hero = ({ portfolios }) => {
       window.removeEventListener("keyup", upHandler)
     }
   }, []) // Empty array ensures that effect is only run on mount and unmount
-
+*/
     return (
       <Wrapper>
         <Background image={images[index]}></Background>
-        <button className="prev-btn" onClick={() => handlePrev()}>
-{/*        <button className="prev-btn" onClick={() => setIndex(index - 1)}>*/}
+        {/*        <button className="prev-btn" onClick={() => handlePrev()}>*/}
+        <button className="prev-btn" onClick={() => setIndex(index - 1)}>
           <FiChevronLeft />
         </button>
-        <button className="next-btn" onClick={() => handleNext()}>
-{/*        <button className="next-btn" onClick={() => setIndex(index + 1)}>*/}
+        {/*<button className="next-btn" onClick={() => handleNext()}>*/}
+        <button className="next-btn" onClick={() => setIndex(index + 1)}>
           <FiChevronRight />
         </button>
         <div className="dots">

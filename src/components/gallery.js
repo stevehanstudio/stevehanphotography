@@ -8,7 +8,7 @@ import Title from "./Title"
 import SEO from "./seo"
 import _ from "lodash"
 
-export default ({ name="fashion", options={margin: 5, direction: "row"}, photos }) => {
+export default ({ name, description, options={margin: 5, direction: "row"}, photos }) => {
   const [currentImage, setCurrentImage] = useState(0)
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
 
@@ -69,6 +69,7 @@ export default ({ name="fashion", options={margin: 5, direction: "row"}, photos 
       <SEO title={`${_.capitalize(name)} Portfolio`} />
       <Title title={name} />
       <Box sx={{ p: `${options.margin}px` }}>
+        <p>{description}</p>
         <Gallery
           photos={galleryPhotos}
           direction={options.direction}

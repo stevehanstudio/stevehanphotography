@@ -1,33 +1,76 @@
+- title: travel
+  slug: /travel
+  description: My journey as photographer began with my travels.
+  photos:
+  - name: travel-1-WhiteDessertEgypt20305
+    caption: The White Dessert in Egypt
+- title: music
+  slug: /music
+  description: Music was an inspiration in getting me hooked to photography that resulted in over a decade of covering electronic dance music events in San Francisco, across the States, and around the World.  For more of my pictures from covering the dance music scenes, stayed tuned for the relaunch of stevehanphoto.com.
+  photos:
+    - name: music-1-SanderVanDoornPOP033112
+      caption: Sander Van Doorn at Skill's ETD POP on 3/31/12
+    - name: music-2-SDMF071406
+      caption: I loved foam parties but have not seen them for years until I travelled to Estonia to photographing the Sun Dance Music Festival in 2006.
 - title: fashion
   slug: /fashion
+  description: I got in to fashion through covering fashion shows and as I got in to photo shoots I learned that photographing fashion is about coming up with the concept, collaboration between the designers, makeup artists and models, and conveying the mood.
   photos:
-    - name: fashion-BenSammieKateKnuvelderKenChen
-      caption: Models Ben and Sammie in designers Ken Chen and jewelry designer Kate Knuvelder's chain mail necklace
-    - name: fashion-ScarlettLaceyBannister
+    - name: fashion-1-BenSammieKateKnuvelderKenChen
+      caption: Models Ben and Sammie in designers Ken Chen and jewelry designer Kate Knuvelder's chainmail necklace
+    - name: fashion-2-ScarlettLaceyBannister
       caption: Model Scarlett Lash in designer Lacey Bannister's head dress
-    - name: fashion-ScarlettLaceyBannister2
+    - name: fashion-3-ScarlettLaceyBannister2
       caption: Model Scarlett Lash in designer Lacey Bannister's head dress
-    - name: fashion-CharlestonPierceFashionShow1
+    - name: fashion-4-CharlestonPierceFashionShow1
       caption: Charleston Pierce Fashion Show - Evening wear
-    - name: fashion-CharlestonPierceFashionShow2
+    - name: fashion-5-CharlestonPierceFashionShow2
       caption: Charleston Pierce Fashion Show - Swimwear
-    - name: fashion-JessicaKateKnuvelder
-      caption: Jessica in designer Kate Knuvelder's chain mail head piece  
-    - name: fashion-KateKnuvelderBlackV5-12-12
-      caption: Model in designer Kate Knuvelder's chain mail head piece at Black V Fashion Show 5/12/12
-    - name: fashion-MichelleBenBW
-      caption: Models Michelle Grey and Ben 
+    - name: fashion-6-JessicaKateKnuvelder
+      caption: Jessica in designer Kate Knuvelder's chainmail head piece  
+    - name: fashion-7-KateKnuvelderBlackV051212
+      caption: Model in designer Kate Knuvelder's chainmail head piece at Black V Fashion Show 5/12/12
+    - name: fashion-8-MichelleBenBW
+      caption: Models Michelle Grey and Ben
+- title: lifestyle
+  slug: /lifestyle
+  description: Lifestyle photography is about collaboration to convey a certain lifestyle.
+  photos:
+  - name: lifestyle-1-KennethShaiShopping
+    caption: Shopping in Union Square.  Models - Kenneth Roebuck and Shai White
+  - name: lifestyle-2-CharlestonHannaRunning012512
+    caption: Charleston and Hanna running
+- title: portrait
+  slug: /portrait
+  description: Portrait photograpphy is about capturing the essence of a person.
+  photos:
+  - name: portrait-1-CharlestonRunningforSuccess
+    caption: Charleston Pierce Running for Success.  Model, actor, model coach, fashion show producer, motivation speaker Charleston Pierce is full of energy.
+  - name: portrait-2-CharlestonPierceStarWalkBookCover
+    caption: Book cover for Charleston Pierce's Star Walk
 - title: restaurants
   slug: /restaurants
+  description: Food, drinks, architectures photographing in restaurants and bars.
   photos:
-    - name: restaurants-1-LaMar
-      caption: Salmon at La Mar Cebicheria Peruana
-    - name: restaurants-2-LaMar2
-      caption: Ahi Tuna at La Mar Cebicheria Peruana
-    - name: restaurants-3-LaMar3
-      caption: Appetizer at La Mar Cebicheria Peruana
+    - name: restaurants-1-BlueDoor1
+      caption: Cured Meat Appetizer Board at The Blue Door Restaurant
+    - name: restaurants-2-BlueDoor2
+      caption: Chocolate cake at The Blue Door Restaurant
+    - name: restaurants-3-BlueDoor3
+      caption: Vanilla crème brûlée with vanilla whipped cream, raspberries, cardamon short bread cookies at The Blue Door Restaurant
     - name: restaurants-4-ThirstyBearRestaurantInterior
-      caption: Thursty Bear Brewing Company restaurant interior
-
+      caption: One of the first restaurants I shot was the Thirsty Bear Brewing Company.
+    - name: restaurants-5-LaMar
+      caption: Salmon at La Mar Cebicheria Peruana
+    - name: restaurants-6-LaMar2
+      caption: Ahi Tuna at La Mar Cebicheria Peruana
+    - name: restaurants-7-LaMar3
+      caption: Appetizer at La Mar Cebicheria Peruana
+- title: techevents
+  slug: /techevents
+  description: Technology conferences, meetups, and hackathons.  In 2017??, I started exploring .  Photographing events will an inspiration to see what the possibilities are.  Virtual reality had inspired me to want to get back to developing technology.  I co-founded a podcast on VR, DopamineVR.com and started covering meetups and GDC.
+  photos:
+    - name: techevents-1-ChrisMurphyNiagraUnrealEngineGDC2019.jpg
+      caption: Chris Murphy giving presentation on Niagra VFX at Unreal Engine Learning Theater at GDC 2019
 
 

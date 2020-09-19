@@ -10,14 +10,41 @@ import SEO from "../components/seo"
 const Portfolios = () => {
   const data = useStaticQuery(graphql`
     query {
-      fashion: cloudinaryAsset(fluid: {src: {regex: "/fashion-1/"}}) {
+      travel: cloudinaryAsset(fluid: { src: { regex: "/travel-1/" } }) {
         fluid {
-            ...CloudinaryAssetFluid
+          ...CloudinaryAssetFluid
         }
       }
-      restaurants: cloudinaryAsset(fluid: {src: {regex: "/restaurants-1/"}}) {
+      music: cloudinaryAsset(fluid: { src: { regex: "/music-1/" } }) {
         fluid {
-            ...CloudinaryAssetFluid
+          ...CloudinaryAssetFluid
+        }
+      }
+      fashion: cloudinaryAsset(fluid: { src: { regex: "/fashion-1/" } }) {
+        fluid {
+          ...CloudinaryAssetFluid
+        }
+      }
+      lifestyle: cloudinaryAsset(fluid: { src: { regex: "/lifestyle-1/" } }) {
+        fluid {
+          ...CloudinaryAssetFluid
+        }
+      }
+      portrait: cloudinaryAsset(fluid: { src: { regex: "/portrait-1/" } }) {
+        fluid {
+          ...CloudinaryAssetFluid
+        }
+      }
+      techevents: cloudinaryAsset(fluid: { src: { regex: "/techevents-1/" } }) {
+        fluid {
+          ...CloudinaryAssetFluid
+        }
+      }
+      restaurants: cloudinaryAsset(
+        fluid: { src: { regex: "/restaurants-1/" } }
+      ) {
+        fluid {
+          ...CloudinaryAssetFluid
         }
       }
     }

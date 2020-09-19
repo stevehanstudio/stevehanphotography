@@ -10,7 +10,7 @@ module.exports = {
     url: `https://gatsby-airtable-design-project.netlify.app/`,
     image: `mainBcg.png`,
     twitterUsername: `@stevehanphoto`,
-    siteUrl: `http://localhost:9000`
+    siteUrl: `http://localhost:9000`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,6 +33,20 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `travel`,
+        path: `${__dirname}/src/images/travel`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `music`,
+        path: `${__dirname}/src/images/music`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `fashion`,
         path: `${__dirname}/src/images/fashion`,
       },
@@ -40,8 +54,36 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `fashion`,
+        path: `${__dirname}/src/images/fashion`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `lifestyle`,
+        path: `${__dirname}/src/images/lifestyle`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portrait`,
+        path: `${__dirname}/src/images/portrait`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `restaurants`,
         path: `${__dirname}/src/images/restaurants`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `techevents`,
+        path: `${__dirname}/src/images/techevents`,
       },
     },
     `gatsby-transformer-sharp`,

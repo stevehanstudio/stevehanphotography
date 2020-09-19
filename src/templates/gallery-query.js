@@ -4,25 +4,27 @@ import Gallery from "../components/gallery"
 
 const GalleryPage = ({ data, pageContext }) => {
   const { name, slug, caption } = pageContext
+  const description = data.portfoliosYaml.description
   const photos = data.images.nodes
   const photosWithCaption = photos.map(photo => {
     data.portfoliosYaml.photos.map(yamlPhoto => {
-      const photoNameWithoutIndex = photo.name.replace(/fashion-(\d+)-/, "fashion-")
-/*      console.log(
-        `Searching caption: photo.name=${photo.name}, photoNameWithoutIndex=${photoNameWithoutIndex}, yamlPhoto.name=${yamlPhoto.name}, yamlPhoto.caption=${yamlPhoto.caption}`
-      )*/
-      if (photoNameWithoutIndex === yamlPhoto.name) {
+//      const photoNameWithoutIndex = photo.name.replace(/fashion-(\d+)-/, "fashion-")
+      /*console.log(
+        `Searching caption: photo.name=${photo.name}, photoNameWithoutIndex=${photoNameWithoutIndex}, yamlPhoto.name=${yamlPhoto.name}, yamlPhoto.caption=${yamlPhoto.caption}`)*/
+
+      if (photo.name === yamlPhoto.name) {
         photo.caption = yamlPhoto.caption
         //console.log("Added caption", photo.name, photo.caption)
         return true
       }
       return false
+      //console.log("Caption not found")
     })
     return photo
   })   
   //console.log("photosWithCaption", photosWithCaption)
   return (
-      <Gallery name={name} photos={photosWithCaption} />
+      <Gallery name={name} description={description} photos={photosWithCaption} />
   )
 }
 
@@ -57,6 +59,7 @@ export const query = graphql`
       }
       slug
       title
+      description
     }
   }
 `

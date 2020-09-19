@@ -3,13 +3,21 @@ import styled from "styled-components"
 import Title from "./Title"
 
 const About = () => {
-  return <Wrapper className="section">
-    <Title title="About Me" />
-    <h6>Steve Han Bio</h6>
-    <div className="section">
-
-    </div>  
-  </Wrapper>
+  return (
+    <Wrapper className="section">
+      <Title title="About" />
+      <div className="section">
+        <p>
+          This purpose of this website is to showcase my journey as a
+          photographer and my experiences and showcase the images that will the most memorable in my journey.
+        </p>
+        <h4>About Me</h4>
+        <p>
+          My journey as a photographer started with my travels, photographing friends, and documenting the trips and experiences.
+        </p>
+      </div>
+    </Wrapper>
+  )
 }
 const Wrapper = styled.section`
   .section-center {

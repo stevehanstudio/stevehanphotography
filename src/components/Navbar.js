@@ -45,8 +45,8 @@ const Navbar = ({location}) => {
           </ul>
           <ul className="social-links">
             {socialLinks.map((socialLink, index) => {
-              const { url, label, Icon } = socialLink
-              console.log(label, Icon, url)
+              const { url, Icon } = socialLink
+              //console.log(label, Icon, url)
               return (
                 <li key={index}>
                   <a
