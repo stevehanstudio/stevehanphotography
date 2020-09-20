@@ -4,7 +4,6 @@ import logo from "../../static/SteveHanPhotography_logo.png"
 import { Link } from "gatsby"
 import {GatsbyContext} from '../context/context'
 import HamburgerIcon from "./HamburgerIcon"
-//import subMenuLinks from "../constants/subMenuLinks"
 
 const activeStyles = {
   color: 'white',
@@ -20,7 +19,6 @@ const Navbar = ({location}) => {
   } = useContext(GatsbyContext)
 
   const [showSubMenu, setShowSubMenu] = useState(false)
-  //console.log("Navbar subMenuLinks", subMenuLinks)
 
   return (
     <Wrapper showSubMenu={showSubMenu} location={location}>
@@ -269,14 +267,6 @@ const Wrapper = styled.nav`
     &:hover {
       color: white;
     }
-    /*  &:hover {
-    color: rgba(255, 255, 255, 1);
-    //cursor: pointer;
-    //          color: #88add2;
-    .mobile-menu-close-icon {
-      color: white;
-      color: #0a2540;
-    }*/
   }
 `
 

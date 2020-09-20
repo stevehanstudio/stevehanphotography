@@ -1,22 +1,14 @@
 import React, { useState, useEffect } from "react"
 import Background from "./Background"
 import styled from "styled-components"
-//import { Link } from "gatsby"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
 import useKeyPress from "../hooks/useKeyPress"
 
 const Hero = ({ portfolios }) => {
-  //console.log("portfolios", portfolios)
   const images = portfolios.map(item => {
-    //console.log(item)
     const image = item.fluid
-    //const {fluid: image } = item
-    //const {node: { fluid: image} } = item
-    //console.log(image)
     return image
   })
-
-  //console.log("images", images);
 
   const [index, setIndex] = useState(0)
   useEffect(() => {
@@ -41,11 +33,9 @@ const Hero = ({ portfolios }) => {
   return (
     <Wrapper>
       <Background image={images[index]}></Background>
-      {/*        <button className="prev-btn" onClick={() => handlePrev()}>*/}
       <button className="prev-btn" onClick={() => setIndex(index - 1)}>
         <FiChevronLeft />
       </button>
-      {/*<button className="next-btn" onClick={() => handleNext()}>*/}
       <button className="next-btn" onClick={() => setIndex(index + 1)}>
         <FiChevronRight />
       </button>

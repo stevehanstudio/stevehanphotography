@@ -3,8 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Layout, SEO } from "../components"
 
 // Query for the 1st photo in each portfolio
 const Portfolios = () => {
@@ -81,8 +80,6 @@ const StyledContainer = styled.div`
 
 const StyledLink = styled(Link)`
   position: relative;
-  //  width: 300px;
-  //  height: 250px;
   overflow: hidden;
   float: left;
   clear: both;

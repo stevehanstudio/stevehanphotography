@@ -5,15 +5,12 @@ import {GatsbyContext} from "../context/context"
 
 const MobileMenu = ({location}) => {
   const {navLinks, socialLinks, isMobileMenuOpen, hideMobileMenu} = useContext(GatsbyContext)
-  //console.log("location", location)
-  //console.log("isMobileMenuOpen", isMobileMenuOpen)
   return (
     <Wrapper location={location} isMobileMenuOpen={isMobileMenuOpen}>
       <div className="container">
         <div className="links">
           {navLinks.map((navLink, index) => {
             const { url, label, Icon } = navLink
-            //console.log("Mobile Nav Menu", label, Icon, url)
             return (
               <Link className="button" to={url} key={index} onClick={hideMobileMenu}>
                 <Icon className="icons"/>
@@ -47,25 +44,18 @@ const Wrapper = styled.aside`
   visibility: hidden;
 
   @media (max-width: 842px) {  
-    /*  position: fixed;*/
     top: ${props => (props.location === "/" ? "72px" : "0")};
-    /*top: 0;
-    left: 0;*/
     position: ${props => (props.location === "/" ? "fixed" : "relative")};
     width: 100%;
-    /*  height: ${p => (p.isMobileMenuOpen ? "auto" : "0")};*/
     opacity: ${p => (p.isMobileMenuOpen ? 0.6 : 0)};
     visibility: ${p => (p.isMobileMenuOpen ? "visible" : "hidden")};
     max-height: ${p => (p.isMobileMenuOpen ? "500px" : "0")};
     transition-duration: 0.5s;
     transition-delay: 0.2s;
-    /*  height: 100%;*/
     background: black;
-    /*  background: rgba(0, 0, 0, 0.4);*/
     z-index: 1;
     display: flex;
     overflow: hidden;
-    /*  align-items: flex-end;*/
     justify-content: left;
     a {
       color: #ccc;
@@ -74,9 +64,7 @@ const Wrapper = styled.aside`
       }
     }
     .container {
-      /*    background: rgba(0, 0, 0, 0.7);*/
       position: relative;
-      /*margin: 2rem 2rem 2rem 2rem;*/
       padding: 0;
       margin: 0;
       .links {

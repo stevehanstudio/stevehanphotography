@@ -1,7 +1,6 @@
 import React from 'react'
 import style from 'styled-components'
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { Layout, SEO } from "../components"
 
 const Contact = () => {
    return (
@@ -63,7 +62,8 @@ export default Contact
 const Wrapper = style.section`
    display: flex;
    flex-direction: column;
-   justify-content: center;
+  padding-top: 1rem;
+   //   justify-content: center;
    width: 100%;   
    height: 100vh;
    margin: 0 auto;
@@ -105,7 +105,7 @@ const Wrapper = style.section`
    }
 
    .submit {
-
+      text-transform: uppercase;
    }
 
 `

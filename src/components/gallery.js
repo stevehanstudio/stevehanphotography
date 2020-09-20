@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from "react"
-//import {graphql, useStaticQuery} from "gatsby"
 import style from "styled-components"
 import Layout from "./layout"
 import Gallery from "react-photo-gallery"
@@ -70,9 +69,6 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
     }
     return undefined;
   }).filter(item => item !== undefined)
-
-  //console.log("galleryPhotos!", galleryPhotos)
-  //console.log("lightboxPhotos!", lightboxPhotos)
 
   return (
     <Layout>

@@ -1,5 +1,4 @@
 import React from "react"
-//import { Link } from "gatsby"
 import styled from "styled-components"
 import Image from "gatsby-image"
 
@@ -10,8 +9,6 @@ const Portfolios = ({ portfolios }) => {
         {portfolios.map(item => {
           const { id } = item
           const fluid = item.fluid
-          //const { name } = item.data
-          //const fluid = item.data.image.localFiles[0].childImageSharp.fluid
           const name = "Temp"
           console.log(id, name, fluid)
           return <article key={id}>

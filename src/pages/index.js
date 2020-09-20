@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, Hero } from "../components"
-import SEO from "../components/seo"
+import { Layout, SEO, Hero } from "../components"
 
 const HomePage = ({ data }) => {
   const {

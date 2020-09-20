@@ -1,7 +1,6 @@
 import React, { useState, createContext } from "react"
 import {graphql, useStaticQuery} from "gatsby"
 import { navLinks, socialLinks } from "../constants/links"
-//import { subMenuLinks } from "../constants/subMenuLinks"
 
 const defaultState = {
   isMobileMenuOpen: false,
@@ -28,7 +27,7 @@ const GatsbyProvider = ({ children }) => {
   `)
 
   const subMenuLinks = data.allPortfoliosYaml.nodes
-  
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const showMobileMenu = () => {
