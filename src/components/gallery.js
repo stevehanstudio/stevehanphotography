@@ -1,12 +1,22 @@
 import React, { useState, useCallback } from "react"
 //import {graphql, useStaticQuery} from "gatsby"
+import style from "styled-components"
 import Layout from "./layout"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
-import { Box } from "theme-ui"
+//import { Box } from "theme-ui"
 import Title from "./Title"
 import SEO from "./seo"
 import _ from "lodash"
+
+const Wrapper = style.div`
+  p {
+    margin: 0 auto;
+    padding-bottom: 2rem; 
+    max-width: 1000px;
+    line-height: 1.9rem;
+  }
+`
 
 export default ({ name, description, options={margin: 5, direction: "row"}, photos }) => {
   const [currentImage, setCurrentImage] = useState(0)
@@ -68,7 +78,8 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
     <Layout>
       <SEO title={`${_.capitalize(name)} Portfolio`} />
       <Title title={name} />
-      <Box sx={{ p: `${options.margin}px` }}>
+      <Wrapper>
+{/*      <Box sx={{ p: `${options.margin}px` }}>*/}
         <p>{description}</p>
         <Gallery
           photos={galleryPhotos}
@@ -90,7 +101,7 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
             </Modal>
           ) : null}
         </ModalGateway>
-      </Box>
+      </Wrapper>
     </Layout>
   )
 }

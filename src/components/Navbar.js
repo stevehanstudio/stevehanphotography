@@ -1,9 +1,10 @@
-import React, { useContext } from "react"
+import React, { useState, useContext } from "react"
 import styled from "styled-components"
 import logo from "../../static/SteveHanPhotography_logo.png"
 import { Link } from "gatsby"
 import {GatsbyContext} from '../context/context'
 import HamburgerIcon from "./HamburgerIcon"
+//import subMenuLinks from "../constants/subMenuLinks"
 
 const activeStyles = {
   color: 'white',
@@ -15,10 +16,14 @@ const Navbar = ({location}) => {
   const {
     navLinks,
     socialLinks,
+    subMenuLinks
   } = useContext(GatsbyContext)
 
+  const [showSubMenu, setShowSubMenu] = useState(false)
+  //console.log("Navbar subMenuLinks", subMenuLinks)
+
   return (
-    <Wrapper location={location}>
+    <Wrapper showSubMenu={showSubMenu} location={location}>
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
@@ -36,9 +41,26 @@ const Navbar = ({location}) => {
               const { url, label } = navLink
               return (
                 <li key={index}>
-                  <Link className="button" to={url} activeStyle={activeStyles}>
+                  <Link
+                    id={label === "portfolios" ? "portfolio-links" : null}
+                    className="button"
+                    to={url}
+                    onMouseEnter={label === "portfolios" ? () => {setShowSubMenu(true)} : null}
+                    activeStyle={activeStyles}
+                  >
                     {label}
                   </Link>
+                  {label === "portfolios" ? (
+                    <div
+                      className="sub-menu"
+                      onMouseLeave={() => setShowSubMenu(false)}
+                    >
+                      <div className="caret" />
+                      {subMenuLinks.map((link, index) => (
+                        <Link key={index} className="button" to={`/portfolios${link.slug}`}>{link.title}</Link>
+                      ))}
+                    </div>
+                  ) : null}
                 </li>
               )
             })}
@@ -69,19 +91,18 @@ const Navbar = ({location}) => {
 
 const Wrapper = styled.nav`
   position: relative;
-  background: ${({ location }) =>
-    location === "/" ? "transparent" : "var(--clr-black)"};
+  background: ${({ location }) => (location === "/" ? "transparent" : "black")};
   z-index: 1;
   height: 5rem;
   display: flex;
   align-items: center;
   margin: 0;
   padding: 0;
-  .nav-center {
+  .nav-center { 
     width: 90vw;
     padding: 0;
     margin: 0 auto;
-    max-width: var(--max-width);
+    max-width: 1000px;
     /*height: 100%;*/
   }
   .nav-header {
@@ -118,6 +139,46 @@ const Wrapper = styled.nav`
   .social-links {
     display: none;
     height: 100%;
+  }
+  .sub-menu {
+    position: absolute;
+    top: 3.8rem;
+    left: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+    transform: translateX(-50%);
+    background: ${({ location }) =>
+      location === "/" ? "rgba(0, 0, 0, 0.5)" : "black"};
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+    opacity: ${props => (props.showSubMenu ? "1" : "0")};
+    visibility: ${props => (props.showSubMenu ? "visible" : "hidden")};
+    z-index: 9;
+  }
+  .caret {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(255, 255, 255, 0.3);
+    top: -10px;
+    left: 50%;
+    transform: translateX: (-50%);
+    transition: all 0.3s ease-in-out;
+    opacity: ${props => (props.showSubMenu ? "1" : "0")};
+    visibility: ${props => (props.showSubMenu ? "visible" : "hidden")};;
+    z-index: 9;
+  }
+  .portfolio-links {
+    &:hover {
+      background: yellow;
+    }
   }
   @media (min-width: 842px) {
     .nav-header {

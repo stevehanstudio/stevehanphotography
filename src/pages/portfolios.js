@@ -68,8 +68,6 @@ const Portfolios = () => {
   )
 }
 
-export default Portfolios
-
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -110,14 +108,15 @@ const StyledImage = styled(Image)`
   //  height: 100%;
   object-fit: cover;
   overflow: hidden;
-  transition: 1s;
+  transition: 0.8s;
   background: black;
   opacity: 0.7;
   margin: 0;
   padding: 0;
+  z-index: 0;
   &:hover {
     border: 2px solid blue;
-    transform: scale(1.2);
+    transform: scale(1.15);
     opacity: 1;
   }
 `
@@ -135,3 +134,5 @@ const StyledTitle = styled.h3`
   margin-top: -1.8rem;
   z-index: 1;
 `
+
+export default Portfolios

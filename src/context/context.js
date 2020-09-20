@@ -1,10 +1,13 @@
 import React, { useState, createContext } from "react"
+import {graphql, useStaticQuery} from "gatsby"
 import { navLinks, socialLinks } from "../constants/links"
+//import { subMenuLinks } from "../constants/subMenuLinks"
 
 const defaultState = {
   isMobileMenuOpen: false,
   navLinks: [],
   socialLinks: [],
+  subMenuLinks: [],
   showMobileMenu: () => {},
   hideMobileMenu: () => {},
 }
@@ -13,30 +16,43 @@ const defaultState = {
 const GatsbyContext = createContext(defaultState)
 
 const GatsbyProvider = ({ children }) => {
-   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const data = useStaticQuery(graphql`
+    query {
+      allPortfoliosYaml {
+        nodes {
+          slug
+          title
+        }
+      }
+    }
+  `)
 
-   const showMobileMenu = () => {
-//     console.log("showMobileMenu")
-     setIsMobileMenuOpen(true)
-   }
+  const subMenuLinks = data.allPortfoliosYaml.nodes
+  
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-   const hideMobileMenu = () => {
-     setIsMobileMenuOpen(false)
-   }
+  const showMobileMenu = () => {
+    setIsMobileMenuOpen(true)
+  }
 
-   return (
-     <GatsbyContext.Provider
-       value={{
-         isMobileMenuOpen,
-         navLinks,
-         socialLinks,
-         showMobileMenu,
-         hideMobileMenu,
-       }}
-     >
-       {children}
-     </GatsbyContext.Provider>
-   )
+  const hideMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
+
+  return (
+    <GatsbyContext.Provider
+      value={{
+        isMobileMenuOpen,
+        navLinks,
+        socialLinks,
+        subMenuLinks,
+        showMobileMenu,
+        hideMobileMenu,
+      }}
+    >
+      {children}
+    </GatsbyContext.Provider>
+  )
 }
 
 export { GatsbyContext, GatsbyProvider }
