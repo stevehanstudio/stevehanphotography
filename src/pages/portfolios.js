@@ -4,44 +4,43 @@ import { Link } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 import { Layout, SEO } from "../components"
+import _ from "lodash"
 
 // Query for the 1st photo in each portfolio
 const Portfolios = () => {
   const data = useStaticQuery(graphql`
     query {
-      travel: cloudinaryAsset(fluid: { src: { regex: "/travel-1/" } }) {
+      travel: cloudinaryAsset(fluid: { src: { regex: "/travel-01-/" } }) {
         fluid {
           ...CloudinaryAssetFluid
         }
       }
-      music: cloudinaryAsset(fluid: { src: { regex: "/music-1/" } }) {
+      music: cloudinaryAsset(fluid: { src: { regex: "/music-01-/" } }) {
         fluid {
           ...CloudinaryAssetFluid
         }
       }
-      fashion: cloudinaryAsset(fluid: { src: { regex: "/fashion-1/" } }) {
+      fashion: cloudinaryAsset(fluid: { src: { regex: "/fashion-01-/" } }) {
         fluid {
           ...CloudinaryAssetFluid
         }
       }
-      lifestyle: cloudinaryAsset(fluid: { src: { regex: "/lifestyle-1/" } }) {
+      lifestyle: cloudinaryAsset(fluid: { src: { regex: "/lifestyle-01-/" } }) {
         fluid {
           ...CloudinaryAssetFluid
         }
       }
-      portrait: cloudinaryAsset(fluid: { src: { regex: "/portrait-1/" } }) {
+      portrait: cloudinaryAsset(fluid: { src: { regex: "/portrait-01-/" } }) {
         fluid {
           ...CloudinaryAssetFluid
         }
       }
-      techevents: cloudinaryAsset(fluid: { src: { regex: "/techevents-1/" } }) {
+      techEvents: cloudinaryAsset(fluid: { src: { regex: "/techEvents-01-/" } }) {
         fluid {
           ...CloudinaryAssetFluid
         }
       }
-      restaurants: cloudinaryAsset(
-        fluid: { src: { regex: "/restaurants-1/" } }
-      ) {
+      restaurants: cloudinaryAsset(fluid: { src: { regex: "/restaurants-01-/" } }) {
         fluid {
           ...CloudinaryAssetFluid
         }
@@ -58,7 +57,7 @@ const Portfolios = () => {
         {Object.keys(data).map(photo => (
           //<div>{JSON.stringify(data[photo])}</div>
           <StyledLink key={photo} to={`${photo}/`}>
-            <StyledTitle>{photo}</StyledTitle>
+            <StyledTitle>{_.startCase(photo)}</StyledTitle>
             <StyledImage fluid={data[photo].fluid} />
           </StyledLink>
         ))}

@@ -6,7 +6,7 @@ import useKeyPress from "../hooks/useKeyPress"
 
 const Hero = ({ portfolios }) => {
   const images = portfolios.map(item => {
-    const image = item.fluid
+    const image = item.childCloudinaryAsset.fluid
     return image
   })
 

@@ -73,7 +73,7 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
   return (
     <Layout>
       <SEO title={`${_.capitalize(name)} Portfolio`} />
-      <Title title={name} />
+      <Title title={_.startCase(name)} />
       <Wrapper>
 {/*      <Box sx={{ p: `${options.margin}px` }}>*/}
         <p>{description}</p>

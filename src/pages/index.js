@@ -3,9 +3,15 @@ import { graphql } from "gatsby"
 import { Layout, SEO, Hero } from "../components"
 
 const HomePage = ({ data }) => {
-  const {
+/*  const {
     allCloudinaryAsset: {nodes: portfolios }
+  } = data*/
+  const {
+    allFile: { nodes: portfolios },
   } = data
+
+  console.log("index:", data)
+  console.log(portfolios)
 
   return (
     <Layout location="/">
@@ -17,6 +23,24 @@ const HomePage = ({ data }) => {
 
 export const query = graphql`
   {
+    allFile(
+      filter: { name: { regex: "/bcg-/" } }
+      sort: { fields: name, order: ASC }
+    ) {
+      nodes {
+        childCloudinaryAsset {
+          fluid {
+            ...CloudinaryAssetFluid
+          }
+        }
+      }
+    }
+  }
+`
+
+/*
+export const query = graphql`
+  {
     allCloudinaryAsset(filter: {fluid: {src: {regex: "/bcg-/"}}}) {
       nodes {
         fluid {
@@ -26,5 +50,5 @@ export const query = graphql`
     }
   }
 `
-
+*/
 export default HomePage

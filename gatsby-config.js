@@ -19,13 +19,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `portfolios`,
-        path: `${__dirname}/src/portfolios`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `bcg`,
         path: `${__dirname}/src/images/bcg`,
       },
@@ -54,8 +47,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `fashion`,
-        path: `${__dirname}/src/images/fashion`,
+        name: `portfolios`,
+        path: `${__dirname}/src/portfolios`,
       },
     },
     {
@@ -75,15 +68,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `restaurants`,
-        path: `${__dirname}/src/images/restaurants`,
+        name: `techEvents`,
+        path: `${__dirname}/src/images/techEvents`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `techevents`,
-        path: `${__dirname}/src/images/techevents`,
+        name: `restaurants`,
+        path: `${__dirname}/src/images/restaurants`,
       },
     },
     `gatsby-transformer-sharp`,
