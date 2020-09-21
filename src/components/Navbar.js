@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react"
 import styled from "styled-components"
 import logo from "../../static/SteveHanPhotography_logo.png"
 import { Link } from "gatsby"
+import _ from "lodash"
 import {GatsbyContext} from '../context/context'
 import HamburgerIcon from "./HamburgerIcon"
 
@@ -43,7 +44,13 @@ const Navbar = ({location}) => {
                     id={label === "portfolios" ? "portfolio-links" : null}
                     className="button"
                     to={url}
-                    onMouseEnter={label === "portfolios" ? () => {setShowSubMenu(true)} : null}
+                    onMouseEnter={
+                      label === "portfolios"
+                        ? () => {
+                            setShowSubMenu(true)
+                          }
+                        : null
+                    }
                     activeStyle={activeStyles}
                   >
                     {label}
@@ -55,7 +62,13 @@ const Navbar = ({location}) => {
                     >
                       <div className="caret" />
                       {subMenuLinks.map((link, index) => (
-                        <Link key={index} className="button" to={`/portfolios${link.slug}`}>{link.title}</Link>
+                        <Link
+                          key={index}
+                          className="button"
+                          to={`/portfolios${link.slug}`}
+                        >
+                          {_.startCase(link.title)}
+                        </Link>
                       ))}
                     </div>
                   ) : null}
@@ -90,7 +103,7 @@ const Navbar = ({location}) => {
 const Wrapper = styled.nav`
   position: relative;
   background: ${({ location }) => (location === "/" ? "transparent" : "black")};
-  z-index: 1;
+  z-index: 10;
   height: 5rem;
   display: flex;
   align-items: center;
@@ -139,23 +152,26 @@ const Wrapper = styled.nav`
     height: 100%;
   }
   .sub-menu {
+    z-index: 99;
     position: absolute;
     top: 3.8rem;
     left: 50%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 2rem;
+    grid-column-gap: 1rem;
+    grid-row-gap: 0.2rem;
+    padding: 2rem 3rem;
     transform: translateX(-50%);
     background: ${({ location }) =>
       location === "/" ? "rgba(0, 0, 0, 0.5)" : "black"};
     height: auto;
     width: auto;
+    white-space: nowrap;
     border-radius: 5px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease-in-out;
     opacity: ${props => (props.showSubMenu ? "1" : "0")};
     visibility: ${props => (props.showSubMenu ? "visible" : "hidden")};
-    z-index: 9;
   }
   .caret {
     position: absolute;

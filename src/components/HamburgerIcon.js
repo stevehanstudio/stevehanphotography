@@ -51,7 +51,7 @@ const MenuButton = styled.div`{
     }*/
 
     .menu-bar {
-      width: 36px;
+      width: 34px;
       background: ${props => (props.isMobileMenuOpen ? "transparent" : "#CCC")};
       height: 4px;
       border-radius: 2px;
@@ -66,7 +66,7 @@ const MenuButton = styled.div`{
     .menu-bar::after {
       content: '';
       position: absolute;
-      width: 36px;
+      width: 34px;
       height: 4px;
       background: #CCC;
       border-radius: 2px;

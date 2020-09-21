@@ -80,16 +80,18 @@
     caption: Secret Agents.  Charleston Pierce and Hannah Rose.
   - name: lifestyle-03-KennethShaiShopping
     caption: Shopping in Union Square.  Models Kenneth Roebuck and Shai White.
-  - name: lifestyle-04-CloudPacifica042812
-    caption: Model Actor Cloud Mykals, Pacifica.
-  - name: lifestyle-05-CloudJumpingElbow
-    caption: Cloud Mykals Treasure Island.
-  - name: lifestyle-06-BusinessTripHailey
-    caption: Business Trip.  Model Actress Hailey Laserna.  Make-up artist Heather Bird O'Connell.  
-  - name: lifestyle-07-BusinessTripHailey
-    caption: Business Trip.  Model Actress Hailey Laserna.  Make-up artist Heather Bird O'Connell.
-  - name: lifestyle-08-OlyaLeslie
+  - name: lifestyle-04-OlyaLeslie
     caption: Sharing with your mobile phones.  Model Leslie Fu.  Creative direction Olya Rostov.
+  - name: lifestyle-05-CloudPacifica042812
+    caption: Model Actor Cloud Mykals, Pacifica.
+  - name: lifestyle-06-CloudMykalsCrewPacifica042812
+    caption: Walking with Purpose.
+  - name: lifestyle-07-CloudJumpingElbow
+    caption: Cloud Mykals Treasure Island.
+  - name: lifestyle-08-BusinessTripHailey
+    caption: Business Trip.  Model Actress Hailey Laserna.  Make-up artist Heather Bird O'Connell.  
+  - name: lifestyle-09-BusinessTripHailey
+    caption: Getting your workout in on business trip.  Model Actress Hailey Laserna.  Make-up artist Heather Bird O'Connell.
 - title: portrait
   slug: /portrait
   description: An astrologist once told me she sees me getting in to portrait photography, capturing the soul of a person.  Portrait photograpphy ranges from capturing the spirit or essence of a person to a professional headshot for conveying a message of confidence or openess.  It can be fashion inspired or it can be capture a person at their natural state of being.
