@@ -1,12 +1,13 @@
 import React, { useState, useCallback } from "react"
 import style from "styled-components"
-import Layout from "./layout"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
+import _ from "lodash"
 //import { Box } from "theme-ui"
+import Layout from "./layout"
 import Title from "./Title"
 import SEO from "./seo"
-import _ from "lodash"
+import VideoGallery from "./VideoGallery"
 
 const Wrapper = style.div`
   p {
@@ -38,6 +39,7 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
     //const width = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 3 : 4
     //const height = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 4 : 3
     // console.log(`width=${width}, height=${height}`)
+  //  console.log("photo", photo)
     if (photo.cloudinary !== null && photo.cloudinary.thumbnail_fluid !== null) {   
       return {
         src: photo.cloudinary.thumbnail_fluid.src,
@@ -47,10 +49,13 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
         srcSet: photo.cloudinary.thumbnail_fluid.srcSet,
         alt: photo.caption,
         title: photo.caption,
+        videoUrl: photo.videoUrl
       }
     }
     return undefined;
   }).filter(item => item !== undefined)
+
+//  console.log("galleryPhotos", galleryPhotos)
 
   const lightboxPhotos = photos.map(photo => {
     //const width = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 3 : 4
@@ -77,26 +82,33 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
       <Wrapper>
 {/*      <Box sx={{ p: `${options.margin}px` }}>*/}
         <p>{description}</p>
-        <Gallery
-          photos={galleryPhotos}
-          direction={options.direction}
-          margin={options.margin}
-          onClick={openLightbox}
-        />
-        <ModalGateway>
-          {viewerIsOpen ? (
-            <Modal onClose={closeLightbox}>
-              <Carousel
-                currentIndex={currentImage}
-                views={lightboxPhotos.map(photo => ({
-                  ...photo,
-                  srcset: photo.srcSet,
-                  caption: photo.title,
-                }))}
+        {name==="video" 
+          ? <VideoGallery videos={galleryPhotos} />
+          : (
+            <>
+              <Gallery
+                photos={galleryPhotos}
+                direction={options.direction}
+                margin={options.margin}
+                onClick={openLightbox}
               />
-            </Modal>
-          ) : null}
-        </ModalGateway>
+              <ModalGateway>
+                {viewerIsOpen ? (
+                  <Modal onClose={closeLightbox}>
+                    <Carousel
+                      currentIndex={currentImage}
+                      views={lightboxPhotos.map(photo => ({
+                        ...photo,
+                        srcset: photo.srcSet,
+                        caption: photo.title,
+                      }))}
+                    />
+                  </Modal>
+                ) : null}
+              </ModalGateway>
+            </>
+          )
+        }
       </Wrapper>
     </Layout>
   )

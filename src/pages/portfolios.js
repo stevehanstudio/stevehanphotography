@@ -45,6 +45,11 @@ const Portfolios = () => {
           ...CloudinaryAssetFluid
         }
       }
+      video: cloudinaryAsset(fluid: { src: { regex: "/video-01-/" } }) {
+        fluid {
+          ...CloudinaryAssetFluid
+        }
+      }
     }
   `)
 

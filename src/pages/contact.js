@@ -33,7 +33,7 @@ const Contact = () => {
                name="subject"
                id="subject"
                className="form-control"
-               placeholder="subject"
+               placeholder="Subject"
              />
            </div>
            <div className="fields">
@@ -60,52 +60,54 @@ const Contact = () => {
 export default Contact
 
 const Wrapper = style.section`
-   display: flex;
-   flex-direction: column;
-  padding-top: 1rem;
-   //   justify-content: center;
-   width: 100%;   
-   height: 100vh;
-   margin: 0 auto;
-   position: relative;
-   overflow-x: hidden;
-   overlow-y: scroll;
-   @media (min-width: 600px) {
-     max-width: 800px;
-      width: 80vw;
-      overflow-x: visible;
-   }
-   h2 {
-      margin-top: 1.8rem;
-      margin-bottom: 1.4rem;
-      text-align: center;
-      @media (min-width: 600px) {
-         margin-top: 4rem;
-         margin-bottom: 3.2rem;
-      }
-   }
-   form {
-     width: 100%;
-     margin-left: 8px;
-     margin-right: 25px;
-     margin-top: 0px;
-     margin-bottom: 0px;   
-   }
-   input, textarea {
-      padding: 14px;
-      margin: 12px 0px;
-      margin-right: 40px;
-      width: 100%;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-family: lato;
-      @media (min-width: 600px) {
-        font-size: 1.15rem;
-      }
-   }
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  //   justify-content: center;
+  width: 100vw;   
+  height: 100vh;
+  padding-right: 15px;
+  position: relative;
+  overflow-x: hidden;
+  overlow-y: scroll;
+  @media (min-width: 600px) {
+    max-width: 800px;
+    width: 80vw;
+    overflow-x: visible;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h2 {
+    margin-top: 1rem;
+    margin-bottom: 1.4rem;
+    text-align: center;
+    @media (min-width: 600px) {
+        margin-top: 4rem;
+        margin-bottom: 3.2rem;
+    }
+  }
+  form {
+    width: 100%;
+    margin-left: 8px;
+    margin-right: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;   
+  }
+  input, textarea {
+    padding: 14px;
+    margin: 12px 0px;
+    margin-right: 40px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: lato;
+    @media (min-width: 600px) {
+      font-size: 1.15rem;
+    }
+  }
 
    .submit {
       text-transform: uppercase;
-   }
-
+      background: tomato;
+    }
 `

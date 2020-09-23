@@ -8,14 +8,21 @@ const GalleryPage = ({ data, pageContext }) => {
   const photos = data.images.nodes
   const photosWithCaption = photos.map(photo => {
     data.portfoliosYaml.photos.map(yamlPhoto => {
+      console.log('Looking', photo, yamlPhoto)
       if (photo.name === yamlPhoto.name) {
         photo.caption = yamlPhoto.caption
+        photo.videoUrl = yamlPhoto.videoUrl 
+        console.log('Found!', photo, yamlPhoto)
         return true
       }
       return false
     })
     return photo
   })   
+
+  console.log("GalleryPage pageContext", pageContext)
+  console.log("GalleryPage data", data)
+  console.log("GalleryPage photos", photos)
   return (
       <Gallery name={name} description={description} photos={photosWithCaption} />
   )
@@ -49,6 +56,7 @@ export const query = graphql`
       photos {
         caption
         name
+        videoUrl
       }
       slug
       title

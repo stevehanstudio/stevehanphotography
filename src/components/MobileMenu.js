@@ -1,10 +1,20 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import _ from "lodash"
 import {GatsbyContext} from "../context/context"
+//import { AiOutlineDown } from "react-icons/ai"
+// Leave out sub menu from mobile menu
 
 const MobileMenu = ({location}) => {
-  const {navLinks, socialLinks, isMobileMenuOpen, hideMobileMenu} = useContext(GatsbyContext)
+  const {
+    navLinks, 
+//    subMenuLinks, 
+    socialLinks, 
+    isMobileMenuOpen, 
+    hideMobileMenu
+  } = useContext(GatsbyContext)
+  
   return (
     <Wrapper location={location} isMobileMenuOpen={isMobileMenuOpen}>
       <div className="container">
@@ -12,9 +22,28 @@ const MobileMenu = ({location}) => {
           {navLinks.map((navLink, index) => {
             const { url, label, Icon } = navLink
             return (
-              <Link className="button" to={url} key={index} onClick={hideMobileMenu}>
-                <Icon className="icons"/>
+              <Link
+                className="button"
+                to={url}
+                key={index}
+                onClick={hideMobileMenu}
+              >
+                <Icon className="icons" />
                 <div className="labels">{label}</div>
+                {/*                {label === "portfolios" ? <AiOutlineDown /> : null}
+                {label === "portfolios" ? (
+                  <div className="sub-menu">
+                    {subMenuLinks.map((link, index) => (
+                      <Link
+                        key={index}
+                        className="button"
+                        to={`/portfolios${link.slug}`}
+                      >
+                        {_.startCase(link.title)}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}*/}
               </Link>
             )
           })}
@@ -43,13 +72,14 @@ const Wrapper = styled.aside`
   display: none;
   visibility: hidden;
 
-  @media (max-width: 842px) {  
+  @media (max-width: 842px) {
     top: ${props => (props.location === "/" ? "72px" : "0")};
     position: ${props => (props.location === "/" ? "fixed" : "relative")};
     width: 100%;
     opacity: ${p => (p.isMobileMenuOpen ? 0.6 : 0)};
     visibility: ${p => (p.isMobileMenuOpen ? "visible" : "hidden")};
-    max-height: ${p => (p.isMobileMenuOpen ? "500px" : "0")};
+    //max-height: ${p => (p.isMobileMenuOpen ? "auto" : "0")};
+        max-height: ${p => (p.isMobileMenuOpen ? "500px" : "0")};
     transition-duration: 0.5s;
     transition-delay: 0.2s;
     background: black;
@@ -97,9 +127,13 @@ const Wrapper = styled.aside`
           width: 3.1rem;
         }
         .labels {
+          text-transform: capitalize;
           margin-left: 0.1rem;
         }
       }
+    }
+    .sub-menu {
+      display: block;
     }
   }
 `
