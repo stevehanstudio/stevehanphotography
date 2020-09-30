@@ -128,67 +128,85 @@
   - name: lifestyle-04-OlyaLeslie
     caption: Sharing with your mobile phones.  Model Leslie Fu.  Creative direction Olya Rostov.
     videoUrl: ~
-  - name: lifestyle-05-CloudPacifica042812
-    caption: Model Actor Cloud Mykals, Pacifica.
+  - name: lifestyle-05-KennethRoebuck
+    caption: Kenneth Roebuck.  Dance.
     videoUrl: ~
-  - name: lifestyle-06-CloudMykalsCrewPacifica042812
-    caption: Walking with Purpose.
+  - name: lifestyle-06-KennethRoebuck2
+    caption: Kenneth Roebuck.  Fitness.
     videoUrl: ~
   - name: lifestyle-07-CloudJumpingElbow
     caption: Cloud Mykals Treasure Island.
     videoUrl: ~
-  - name: lifestyle-08-BusinessTripHailey
-    caption: Business Trip.  Model Actress Hailey Laserna.  Make-up artist Heather Bird O'Connell.  
+  - name: lifestyle-08-CloudPacifica042812
+    caption: Model Actor Cloud Mykals, Pacifica.
     videoUrl: ~
-  - name: lifestyle-09-BusinessTripHailey
-    caption: Getting your workout in on business trip.  Model Actress Hailey Laserna.  Make-up artist Heather Bird O'Connell.
+  - name: lifestyle-09-CloudMykalsCrewPacifica042812
+    caption: Walking Forward with Purpose.
+    videoUrl: ~
+  - name: lifestyle-10-BusinessTripHailey
+    caption: Business Trip.  Model / Actress Hailey Laserna.  Make-up / styling by Heather Bird O'Connell.  
+    videoUrl: ~
+  - name: lifestyle-11-BusinessTripHailey
+    caption: Getting your workout in on business trip.  Model Actress Hailey Laserna.  Make-up / styling by Heather Bird O'Connell.
     videoUrl: ~
 - title: portrait
   slug: /portrait
   description: An astrologist once told me she sees me getting in to portrait photography, capturing the soul of a person.  Portrait photograpphy ranges from capturing the spirit or essence of a person to a professional headshot for conveying a message of confidence or openess.  It can be fashion inspired or it can be capture a person at their natural state of being.
   photos:
   - name: portrait-01-CharlestonRunningforSuccess
-    caption: Model, actor, model coach, fashion show producer, motivation speaker Charleston Pierce running for Success.
+    caption: Model, actor, model coach, fashion show producer, motivational speaker Charleston Pierce Running for Success.
     videoUrl: ~
   - name: portrait-02-CharlestonPierceStarWalkBookCover
-    caption: Book cover of Charleston Pierce's Star Walk
+    caption: Book cover of Charleston Pierce's book, Star Walk.
     videoUrl: ~
-  - name: portrait-03-Daisey Berns headshot for UploadVR
-    caption: Headshot UploadVR.
+  - name: portrait-03-ScarlettLashAtussaCouture
+    caption: Scarlett Lash in corset by Atussa Couture.  Fashion inspired portrait.  Post-production by Christian Lee.
     videoUrl: ~
-  - name: portrait-04-Az Balabanian headshot for UploadVR
-    caption: Headshot UploadVR.
+  - name: portrait-04-MissyM
+    caption: Artist Missy M at location of her mural, Dream of Something Beautiful, Oakland Chinatown.
     videoUrl: ~
-  - name: portrait-05-Lydia
+  - name: portrait-05-MissyM
+    caption: Missy M.  Ready for the Edwardian Ball.
+    videoUrl: ~
+  - name: portrait-06-Lydia
     caption: Business portrait.
     videoUrl: ~
-  - name: portrait-06-KennethRoebuck2
-    caption: Fitness.
+  - name: portrait-07-DaiseyBernsHeadshotUploadVR
+    caption: Headshot UploadVR.
     videoUrl: ~
-  - name: portrait-07-KennethRoebuck
-    caption: Dance.
+  - name: portrait-08-AzBalabanianHeadshotUploadVR
+    caption: Az Balabanian headshot at UploadVR.
     videoUrl: ~
-  - name: portrait-08-IssacMunozBW
-    caption: Low key B&W.
+  - name: portrait-09-IssacMunozBW
+    caption: Issac Munoz.  Low key black & white.
     videoUrl: ~
-  - name: portrait-09-LotusThief
+  - name: portrait-10-LotusThief
     caption: Lotus Thief band album promo.
     videoUrl: ~
-  - name: portrait-10-wheelhouse
-    caption: Wheelhouse SF yoga, core, strength, indoor cycling studio. 
+  - name: portrait-11-wheelhouse
+    caption: Staff at Wheelhouse SF yoga, core, strength, indoor cycling studio. 
     videoUrl: ~
-  - name: portrait-11-Aubrey
-    caption: Window light.
+  - name: portrait-12-Aubrey
+    caption: Aubrey Rinehart.  Window light.
     videoUrl: ~
-  - name: portrait-12-YanaHeadshot2
-    caption: Professional headshot.
+  - name: portrait-13-AtlasLasairTreasureIsland
+    caption: AtlasLasair.  Musician/actor.
     videoUrl: ~
-  - name: portrait-13-YanaHeadshot
+  - name: portrait-14-CloudMykalsCrewRockStars
+    caption: Cloud Mykals and crew. Rock stars style shoot.
+    videoUrl: ~
+  - name: portrait-15-MichellePogrebinsky
+    caption: Michelle Pogrebinsky.  Natural look.  On location at Maya Ma's birthday fashion show.
+    videoUrl: ~
+  - name: portrait-16-MichellePogrebinsky
+    caption: Michelle Pogrebinsky.  Fashion inspired.  On location at Maya Ma's birthday fashion show.
+    videoUrl: ~
+  - name: portrait-17-YanaHeadshot
     caption: Professional headshot.
     videoUrl: ~
 - title: techEvents
   slug: /techEvents
-  description: Technology conferences, meetups, and hackathons.  In 2017??, I started exploring .  Photographing events will an inspiration to see what the possibilities are.  Virtual reality had inspired me to want to get back to developing technology.  I co-founded a podcast on VR, DopamineVR.com and started covering meetups and GDC.
+  description: Technology conferences, expos, meetups, and hackathons.
   photos:
   - name: techEvents-01-ChrisMurphyNiagraUnrealEngineGDC2019
     caption: Chris Murphy giving presentation on Niagra VFX at Unreal Engine Learning Theater at GDC 2019

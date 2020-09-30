@@ -1,3 +1,5 @@
+// To do: page and label are the same.  Remove one.
+
 import { AiFillHome } from "react-icons/ai"
 import { MdContactMail } from "react-icons/md"
 import {

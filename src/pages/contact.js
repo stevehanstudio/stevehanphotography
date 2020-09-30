@@ -105,9 +105,15 @@ const Wrapper = style.section`
       font-size: 1.15rem;
     }
   }
-
-   .submit {
-      text-transform: uppercase;
-      background: tomato;
+  .submit {
+    text-transform: uppercase;
+    color: white;
+    background: #0078f2; 
+    //#1877F2;
+    //rgb(0, 107, 217);
+    &:hover {
+      background: #007dfc;
+      //rgb(13, 133, 255);
     }
+  }
 `

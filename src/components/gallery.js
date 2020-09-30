@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react"
+import useWindowDimensions from "../hooks/useWindowDimensions"
 import style from "styled-components"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
@@ -16,11 +17,17 @@ const Wrapper = style.div`
     max-width: 1000px;
     line-height: 1.9rem;
   }
+  .react-images__view-image {
+    max-height: 100vh !important;
+  }
 `
 
 export default ({ name, description, options={margin: 5, direction: "row"}, photos }) => {
   const [currentImage, setCurrentImage] = useState(0)
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
+  const { height: viewportHeight, width: viewportWidth } = useWindowDimensions()
+
+  console.log("Viewport", viewportHeight, viewportWidth)
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index)
@@ -40,7 +47,8 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
     //const height = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 4 : 3
     // console.log(`width=${width}, height=${height}`)
   //  console.log("photo", photo)
-    if (photo.cloudinary !== null && photo.cloudinary.thumbnail_fluid !== null) {   
+
+  if (photo.cloudinary !== null && photo.cloudinary.thumbnail_fluid !== null) {   
       return {
         src: photo.cloudinary.thumbnail_fluid.src,
         width: photo.cloudinary.thumbnail_fluid.maxWidth,
@@ -49,19 +57,39 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
         srcSet: photo.cloudinary.thumbnail_fluid.srcSet,
         alt: photo.caption,
         title: photo.caption,
-        videoUrl: photo.videoUrl
+        videoUrl: photo.videoUrl,
       }
     }
     return undefined;
   }).filter(item => item !== undefined)
 
-//  console.log("galleryPhotos", galleryPhotos)
+  console.log("galleryPhotos", galleryPhotos)
 
-  const lightboxPhotos = photos.map(photo => {
-    //const width = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 3 : 4
-    //const height = (photo.cloudinary.fluid.aspectRatio < 1.0) ? 4 : 3
-    // console.log(`width=${width}, height=${height}`)
+  const lightboxPhotos = photos.map((photo, index) => {
+/*    const { maxWidth, maxHeight } = photo.cloudinary.thumbnail_fluid
+    const widthRatio = viewportWidth / maxWidth
+    const heightRatio = viewportHeight / maxHeight
+    let width, height
+
+    if (widthRatio > 1 && heightRatio > 1) {
+      width = maxWidth
+      height = maxHeight
+    } else if (widthRatio < 1 && heightRatio > 1) {
+      width = viewportWidth
+      height = maxHeight * widthRatio
+    } else if (widthRatio > 1 && heightRatio < 1) {
+      width = maxWidth * heightRatio
+      height = viewportHeight
+    } else if (widthRatio < heightRatio) {
+      width = viewportWidth
+      height = maxHeight * widthRatio
+    } else {
+      width = maxWidth * widthRatio
+      height = viewportHeight
+    }
+*/
     if (photo.cloudinary !== null && photo.cloudinary.lightbox_fluid !== null) {   
+      //console.log("lightboxPhoto", photo.cloudinary.lightbox_fluid)
       return {
         src: photo.cloudinary.lightbox_fluid.src,
         width: photo.cloudinary.lightbox_fluid.maxWidth,
@@ -80,7 +108,6 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
       <SEO title={`${_.capitalize(name)} Portfolio`} />
       <Title title={_.startCase(name)} />
       <Wrapper>
-{/*      <Box sx={{ p: `${options.margin}px` }}>*/}
         <p>{description}</p>
         {name==="video" 
           ? <VideoGallery videos={galleryPhotos} />

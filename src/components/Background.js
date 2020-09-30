@@ -24,13 +24,13 @@ const HeroBackgroundImage = styled(BackgroundImage)`
 `
 
 const fadeIn = keyframes`
-      from{
-         background-color:rgba(0,0,0,0.8);
-      }
-      to{
-        background-color:rgba(0,0,0,0);
-      }
-      `
+  from{
+    background-color:rgba(0,0,0,0.8);
+  }
+  to{
+    background-color:rgba(0,0,0,0);
+  }
+`
 
 const Wrapper = styled.section`
   .bcg {

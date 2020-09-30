@@ -1,7 +1,6 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import _ from "lodash"
 import {GatsbyContext} from "../context/context"
 //import { AiOutlineDown } from "react-icons/ai"
 // Leave out sub menu from mobile menu

@@ -1,3 +1,5 @@
+// To do: navLinks and socialLinks are constants.  Remove from context.
+
 import React, { useState, createContext } from "react"
 import {graphql, useStaticQuery} from "gatsby"
 import { navLinks, socialLinks } from "../constants/links"
