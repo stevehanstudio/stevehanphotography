@@ -7,7 +7,7 @@ module.exports = {
     description: `Photography and video portfolio site built using React, Gatsby, Cloudinary, Gatsby Background Image, Gatsby Transformer Cloudinary plugins and React Context API. Styled using Styled-Components. `,
     author: `Steve Han`,
     titleTemplate: `%s | Steve Han Photography`,
-    url: `https://gatsby-airtable-design-project.netlify.app/`,
+    url: `https://www.stevehanphotography.com/`,
     image: `mainBcg.png`,
     twitterUsername: `@stevehanphoto`,
     siteUrl: `http://localhost:9000`,
@@ -142,7 +142,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: ``,
+        id: `GTM-TMS433R`,
         includeInDevelopment: true,
       },
     },

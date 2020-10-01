@@ -1,13 +1,8 @@
-// To do: navLinks and socialLinks are constants.  Remove from context.
-
 import React, { useState, createContext } from "react"
 import {graphql, useStaticQuery} from "gatsby"
-import { navLinks, socialLinks } from "../constants/links"
 
 const defaultState = {
   isMobileMenuOpen: false,
-  navLinks: [],
-  socialLinks: [],
   subMenuLinks: [],
   showMobileMenu: () => {},
   hideMobileMenu: () => {},
@@ -44,8 +39,6 @@ const GatsbyProvider = ({ children }) => {
     <GatsbyContext.Provider
       value={{
         isMobileMenuOpen,
-        navLinks,
-        socialLinks,
         subMenuLinks,
         showMobileMenu,
         hideMobileMenu,

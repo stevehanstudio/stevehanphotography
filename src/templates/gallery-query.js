@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Gallery from "../components/gallery"
 
 const GalleryPage = ({ data, pageContext }) => {
-  const { name, slug, caption } = pageContext
+  const { name } = pageContext
   const description = data.portfoliosYaml.description
   const photos = data.images.nodes
   const photosWithCaption = photos.map(photo => {

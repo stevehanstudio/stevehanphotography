@@ -2,14 +2,13 @@ import React, { useContext } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import {GatsbyContext} from "../context/context"
+import { navLinks, socialLinks } from "../constants/links"
 //import { AiOutlineDown } from "react-icons/ai"
 // Leave out sub menu from mobile menu
 
 const MobileMenu = ({location}) => {
   const {
-    navLinks, 
-//    subMenuLinks, 
-    socialLinks, 
+    subMenuLinks, 
     isMobileMenuOpen, 
     hideMobileMenu
   } = useContext(GatsbyContext)

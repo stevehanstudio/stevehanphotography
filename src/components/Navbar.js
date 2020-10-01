@@ -3,6 +3,7 @@ import styled from "styled-components"
 import logo from "../../static/SteveHanPhotography_logo.png"
 import { Link } from "gatsby"
 import _ from "lodash"
+import { navLinks, socialLinks } from "../constants/links"
 import {GatsbyContext} from '../context/context'
 import HamburgerIcon from "./HamburgerIcon"
 
@@ -14,8 +15,6 @@ const activeStyles = {
 
 const Navbar = ({location}) => {
   const {
-    navLinks,
-    socialLinks,
     subMenuLinks
   } = useContext(GatsbyContext)
 
@@ -46,7 +45,8 @@ const Navbar = ({location}) => {
                     to={url}
                     onMouseEnter={
                       label === "portfolios"
-                        ? () => {
+                        ? (e) => {
+                            e.preventDefault()
                             setShowSubMenu(true)
                           }
                         : null
@@ -58,7 +58,11 @@ const Navbar = ({location}) => {
                   {label === "portfolios" ? (
                     <div
                       className="sub-menu"
-                      onMouseLeave={() => setShowSubMenu(false)}
+                      onMouseLeave={(e) => {
+                        e.preventDefault()
+                        setShowSubMenu(false)
+                      }}
+                      role="navigation"
                     >
                       <div className="caret" />
                       {subMenuLinks.map((link, index) => (
@@ -141,7 +145,6 @@ const Wrapper = styled.nav`
       cursor: pointer;
       transition: all 0.3s linear;
       &:hover {
-        /*        background: var(--clr-primary-3);*/
         background: hsl(21, 81%, 29%);
       }
     }
@@ -165,6 +168,8 @@ const Wrapper = styled.nav`
     background: ${({ location }) =>
       location === "/" ? "rgba(0, 0, 0, 0.5)" : "black"};
     height: auto;
+//    height: ${props => (props.showSubMenu ? "0" : "400px")};
+//    width: max-content;
     width: auto;
     white-space: nowrap;
     border-radius: 5px;
