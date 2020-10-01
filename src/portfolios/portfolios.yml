@@ -23,9 +23,12 @@
   - name: travel-07-MasqueradeMasksVenice
     caption: Masquerade Masks, Venice, Italy 2011.
     videoUrl: ~
+  - name: travel-08-DJatMoorgBarcelonaAugust2002
+    caption: In 2002, I traveled to Ibiza and Barcelona, Spain.  At The Moorg (club) in Barcelona, it was almost pitch dark other than a spotlight by the DJ booth that flashes on and off every second or so.  I took this photo with my Sony point & shoot digital camera by trapping the camera and keeping the shutter open between multiple flashes.  This shot was the shot that inspired me to want to work with the dynamic lighting conditions of dance music events.
+    videoUrl: ~
 - title: music
   slug: /music
-  description: Music was an inspiration in getting me hooked to photography that resulted in over a decade of covering electronic dance music events in San Francisco, across the States, and around the World.  Managing the website, eventvibe.com.  For more of my pictures from covering the dance music scenes, stayed tuned for the relaunch of stevehanphoto.com.
+  description: I had a passionate in electronic dance music that led to over a decade of covering electronic dance music events in San Francisco, across the States, and around the World, and managing the website, eventvibe.com.
   photos:
   - name: music-01-SanderVanDoornPOP033112
     caption: Sander Van Doorn at Skill's ETD POP 3/31/12
@@ -74,9 +77,6 @@
     videoUrl: ~
   - name: music-16-NYECocoBongoPlayadelCarmen010511
     caption: Every night is New Years Eve at Coco Bongo.
-    videoUrl: ~
-  - name: music-17-Lime072510
-    caption: Lime in San Francisco 7/25/10.
     videoUrl: ~
 - title: fashion
   slug: /fashion
@@ -151,7 +151,7 @@
     videoUrl: ~
 - title: portrait
   slug: /portrait
-  description: An astrologist once told me she sees me getting in to portrait photography, capturing the soul of a person.  Portrait photograpphy ranges from capturing the spirit or essence of a person to a professional headshot for conveying a message of confidence or openess.  It can be fashion inspired or it can be capture a person at their natural state of being.
+  description: An astrologist once told me she sees me getting in to portrait photography, capturing the soul of a person.  Portrait photography can range from a professional headshot for conveying a message of confidence or openess to capturing the spirit, essence or soul of a person.  It can be fashion inspired or it can be capturing a person at their natural state of being.
   photos:
   - name: portrait-01-CharlestonRunningforSuccess
     caption: Model, actor, model coach, fashion show producer, motivational speaker Charleston Pierce Running for Success.
@@ -209,13 +209,13 @@
   description: Technology conferences, expos, meetups, and hackathons.
   photos:
   - name: techEvents-01-ChrisMurphyNiagraUnrealEngineGDC2019
-    caption: Chris Murphy giving presentation on Niagra VFX at Unreal Engine Learning Theater at GDC 2019
+    caption: Chris Murphy giving presentation on Niagra VFX at Unreal Engine Learning Theater at Games Developer Conference GDC 2019
     videoUrl: ~
   - name: techEvents-02-MikeySiegelConsciousnessVRmeetupUploadVR021917
     caption: Mikey Siegel at the Consciousness VR meetup at Upload VR
     videoUrl: ~
   - name: techEvents-03-Xtech051816
-    caption: XTech 2016.  Experience Technology and NeuroGaming Conference and Expo.
+    caption: XTech Experience Technology and NeuroGaming Conference and Expo 2016.
     videoUrl: ~
   - name: techEvents-04-EmotivDemoXTech051816
     caption: Emotive demo at XTech 2016.
@@ -224,7 +224,7 @@
     caption: Tim Ferris and Adam Gazzaley at XTech 2016.
     videoUrl: ~
   - name: techEvents-06-AdamGazzaleyJazzVenturesXtech051816
-    caption: Adam Gazzaley at Ztech 2016.
+    caption: Neuroscentist Adam Gazzaley of UCSF's Neuroscape and JAZZ Venture Partners, at XTech 2016.
     videoUrl: ~
   - name: techEvents-07-XTech051716
     caption: XTech 2016.
@@ -262,6 +262,9 @@
     videoUrl: ~
   - name: restaurants-07-LaMar3
     caption: Appetizer at La Mar Cebicheria Peruana
+    videoUrl: ~
+  - name: restaurants-08-Salmon
+    caption: Salmon
     videoUrl: ~
 - title: video
   slug: /video
