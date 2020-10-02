@@ -7,18 +7,27 @@ const About = () => {
     <Wrapper className="section">
       <Title title="About" />
       <div className="section">
+        <p>Coming soon</p>
+      </div>
+    </Wrapper>
+  )
+}
+
+/*
         <p>
           This purpose of this website is to showcase my journey as a
           photographer and my experiences and showcase the images that will the most memorable in my journey.
         </p>
         <h3>About Me</h3>
+        <div>
+          <img src="../../static/SunsetPartyNavatoPhotoByMalcolmTrachtenberg.jpg" alt="Steve Han at Sunset Party in Navato" />
+          <p>Photo by Malcolm Trachtenberg</p>
+        </div>
         <p>
           My journey as a photographer started with my travels, photographing friends, and documenting the trips and experiences.
         </p>
-      </div>
-    </Wrapper>
-  )
-}
+*/
+
 const Wrapper = styled.section`
   .section {
     margin-top: 4rem;
