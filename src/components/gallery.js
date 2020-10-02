@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react"
-import useWindowDimensions from "../hooks/useWindowDimensions"
+//import useWindowDimensions from "../hooks/useWindowDimensions"
 import style from "styled-components"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
@@ -25,9 +25,9 @@ const Wrapper = style.div`
 export default ({ name, description, options={margin: 5, direction: "row"}, photos }) => {
   const [currentImage, setCurrentImage] = useState(0)
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
-  const { height: viewportHeight, width: viewportWidth } = useWindowDimensions()
+//  const { height: viewportHeight, width: viewportWidth } = useWindowDimensions()
 
-  console.log("Viewport", viewportHeight, viewportWidth)
+//  console.log("Viewport", viewportHeight, viewportWidth)
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index)
