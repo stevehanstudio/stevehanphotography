@@ -28,11 +28,15 @@ const SEO = ({ title, description, image, article }) => {
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-      <meta name="keywords" content="electronic dance music photography, electronic dance music images, travel photography, fashion photography, lifestyle photography, portrait photography, food photography, cocktails photography, photography, gatsby, gatsbyJS, gatsby.js, gatsby cloudinary, gatsby-transformer-cloudinary, gatsby transformer cloudinary plugin" />
+      <meta
+        name="keywords"
+        content="electronic dance music photography, electronic dance music images, travel photography, fashion photography, lifestyle photography, portrait photography, food photography, cocktails photography, photography, gatsby, gatsbyJS, gatsby.js, gatsby cloudinary, gatsby-transformer-cloudinary, gatsby transformer cloudinary plugin"
+      />
 
       {seo.url && <meta property="og:url" content={seo.url} />}
 
-      {(article ? true : null) && <meta property="og:type" content="article" />}
+      <meta property="og:type" content="website" />
+      {/*(article ? true : null) && <meta property="og:type" content="article" />*/}
 
       {seo.title && <meta property="og:title" content={seo.title} />}
 
@@ -41,6 +45,7 @@ const SEO = ({ title, description, image, article }) => {
       )}
 
       {seo.image && <meta property="og:image" content={seo.image} />}
+      <meta property="og:image:type" content="image/png" />
 
       <meta name="twitter:card" content="summary_large_image" />
 
@@ -55,6 +60,7 @@ const SEO = ({ title, description, image, article }) => {
       )}
 
       {seo.image && <meta name="twitter:image" content={seo.image} />}
+      <meta property="twitter:image:type" content="image/png" />
 
       <meta property="og:locale" content="en_US" />
       <link rel="canonical" href={seo.url} />

@@ -8,7 +8,7 @@ module.exports = {
     author: `Steve Han`,
     titleTemplate: `%s | Steve Han Photography`,
     url: `https://www.stevehanphotography.com`,
-    image: `mainBcg.png`,
+    image: `/mainBcg.png`,
     twitterUsername: `@stevehanphoto`,
     siteUrl: `https://www.stevehanphotography.com`,
   },
@@ -20,16 +20,9 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `portfolios`,
-        path: `${__dirname}/src/content/portfolios`,
+        path: `${__dirname}/src/portfolios`,
       },
     },
-/*    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `about`,
-        path: `${__dirname}/src/content/about`,
-      },
-    },*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -145,6 +138,7 @@ module.exports = {
       options: {
         trackingId: `UA-178415099-1`,
         head: true,
+        siteSpeedSampleRate: 100,
       },
     },
     {
