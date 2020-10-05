@@ -62,12 +62,18 @@ const Navbar = ({location}) => {
                         e.preventDefault()
                         setShowSubMenu(false)
                       }}
-                      role="navigation"
+                      ariaHaspopup="true"
+                      ariaExpanded="false"
+                      tabIndex={0} 
+                      role="menu"
                     >
                       <div className="caret" />
                       {subMenuLinks.map((link, index) => (
                         <Link
                           key={index}
+                          role="menuitem"
+                          ariaHaspopup="true"
+                          tabIndex={-1} 
                           className="button"
                           to={`/portfolios${link.slug}`}
                         >

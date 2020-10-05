@@ -7,15 +7,29 @@ module.exports = {
     description: `Photography and video portfolio site built using React, Gatsby, Cloudinary, Gatsby Background Image, Gatsby Transformer Cloudinary plugins and React Context API. Styled using Styled-Components. `,
     author: `Steve Han`,
     titleTemplate: `%s | Steve Han Photography`,
-    url: `https://www.stevehanphotography.com/`,
+    url: `https://www.stevehanphotography.com`,
     image: `mainBcg.png`,
     twitterUsername: `@stevehanphoto`,
-    siteUrl: `http://localhost:9000`,
+    siteUrl: `https://www.stevehanphotography.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolios`,
+        path: `${__dirname}/src/content/portfolios`,
+      },
+    },
+/*    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `about`,
+        path: `${__dirname}/src/content/about`,
+      },
+    },*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -42,13 +56,6 @@ module.exports = {
       options: {
         name: `fashion`,
         path: `${__dirname}/src/images/fashion`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `portfolios`,
-        path: `${__dirname}/src/portfolios`,
       },
     },
     {
@@ -132,6 +139,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

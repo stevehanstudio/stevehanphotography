@@ -46,6 +46,7 @@ const Hero = ({ portfolios }) => {
               key={btnIndex}
               onClick={() => setIndex(btnIndex)}
               role="button"
+              aria-label="Select Image"
               tabIndex={btnIndex}
               onKeyDown={() => setIndex(btnIndex)}
               className={index === btnIndex ? "active" : undefined}
@@ -142,6 +143,9 @@ const Wrapper = styled.section`
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
+    @media (max-width: 576px) {
+      bottom: 17%;
+    }
     span {
       display: block;
       cursor: pointer;

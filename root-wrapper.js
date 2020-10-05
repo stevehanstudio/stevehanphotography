@@ -112,6 +112,11 @@ const GlobalStyle = createGlobalStyle`
       //margin: 0 auto;
       //max-width: var(--max-width);
    }
+
+   .react-images__view-image {
+      max-height: 100vh !important;
+   }
+
 `
 
 export const wrapRootElement = ({ element }) => {

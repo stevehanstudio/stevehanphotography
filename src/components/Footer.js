@@ -19,11 +19,12 @@ const Footer = ({ location }) => {
 }
 
 const Wrapper = styled.footer`
+  z-index: 2;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 4.6rem;
+  height: 3.6rem;
   display: grid;
   place-items: center;
   background: ${({ location }) => (location === "/" ? "transparent" : "black")};
@@ -32,7 +33,9 @@ const Wrapper = styled.footer`
   text-align: center;
   padding: 1rem;
   @media (max-width: 576px) {
-    height: 3.6rem;
+    height: 3.4rem;
+    bottom: 0;
+//    bottom: ${({ location }) => (location === "/" ? "3.4rem" : "0")};
   }
   p {
     color: rgba(255, 255, 255, 0.6);

@@ -4,7 +4,7 @@ import { Layout, SEO, About } from "../components"
 const HomePage = () => {
    return (
      <Layout>
-       <SEO title="About Me" />
+       <SEO title="About" />
        <About />
      </Layout>
    )

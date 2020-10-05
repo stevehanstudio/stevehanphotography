@@ -8,7 +8,7 @@ import { navLinks, socialLinks } from "../constants/links"
 
 const MobileMenu = ({location}) => {
   const {
-    subMenuLinks, 
+//    subMenuLinks, 
     isMobileMenuOpen, 
     hideMobileMenu
   } = useContext(GatsbyContext)
@@ -72,18 +72,25 @@ const Wrapper = styled.aside`
 
   @media (max-width: 842px) {
     top: ${props => (props.location === "/" ? "72px" : "0")};
-    position: ${props => (props.location === "/" ? "fixed" : "relative")};
+//    position: ${props => (props.location === "/" ? "fixed" : "relative")};
+//    position: ${props => (props.location === "/" ? "fixed" : "absolute")};
+    position: fixed;
     width: 100%;
-    opacity: ${p => (p.isMobileMenuOpen ? 0.6 : 0)};
-    visibility: ${p => (p.isMobileMenuOpen ? "visible" : "hidden")};
+    opacity: ${props => (props.isMobileMenuOpen ? 1 : 0)};
+    //opacity: ${props => (props.isMobileMenuOpen ? 0.6 : 0)};
+    visibility: ${props => (props.isMobileMenuOpen ? "visible" : "hidden")};
     //max-height: ${p => (p.isMobileMenuOpen ? "auto" : "0")};
-        max-height: ${p => (p.isMobileMenuOpen ? "500px" : "0")};
+    height: 100%;
+//    min-height: ${p => (p.isMobileMenuOpen ? "100vh" : "0")};
+//    max-height: ${p => (p.isMobileMenuOpen ? "100vh" : "0")};
+    //max-height: ${p => (p.isMobileMenuOpen ? "500px" : "0")};
     transition-duration: 0.5s;
     transition-delay: 0.2s;
-    background: black;
-    z-index: 1;
+    background: ${props => (props.location === "/" ? "rgba(0,0,0,0.6)" : "black")};
+    z-index: 2;
     display: flex;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     justify-content: left;
     a {
       color: #ccc;

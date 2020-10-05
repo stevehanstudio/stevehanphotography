@@ -7,8 +7,8 @@ const HomePage = ({ data }) => {
     allFile: { nodes: portfolios },
   } = data
 
-  console.log("index:", data)
-  console.log(portfolios)
+  //console.log("index:", data)
+  //console.log(portfolios)
 
   return (
     <Layout location="/">

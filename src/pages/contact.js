@@ -1,15 +1,23 @@
 import React from 'react'
-import style from 'styled-components'
-import { Layout, SEO } from "../components"
+import styled from 'styled-components'
+import { Layout, SEO, Title } from "../components"
 
 const Contact = () => {
    return (
      <Layout>
        <SEO title="Contact" />
        <Wrapper>
-         <h2>Contact Me</h2>
-         <form action="POST" data-netlify="true">
-           <div className="fields">
+         <Title title="Contact Me" />
+          <form 
+              name="stevehanphotography-contact"
+              method="post"
+              netlify-honeypot="bot-field"
+              action="/success" 
+              data-netlify="true"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="stevehanphotography-contact" />
+            <div className="fields">
              <input
                type="text"
                name="name"
@@ -41,7 +49,7 @@ const Contact = () => {
                name="message"
                id="message"
                className="form-control"
-               rows="10"
+               rows="8"
                placeholder="Your message"
              />
            </div>
@@ -59,10 +67,10 @@ const Contact = () => {
 
 export default Contact
 
-const Wrapper = style.section`
+const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   //   justify-content: center;
   width: 100vw;   
   height: 100vh;
@@ -77,15 +85,15 @@ const Wrapper = style.section`
     margin-left: auto;
     margin-right: auto;
   }
-  h2 {
+/*  h1 {
     margin-top: 1rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1rem;
     text-align: center;
     @media (min-width: 600px) {
         margin-top: 4rem;
         margin-bottom: 3.2rem;
     }
-  }
+  }*/
   form {
     width: 100%;
     margin-left: 8px;

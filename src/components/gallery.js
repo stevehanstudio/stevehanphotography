@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react"
 //import useWindowDimensions from "../hooks/useWindowDimensions"
-import style from "styled-components"
+import styled from "styled-components"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
 import _ from "lodash"
@@ -10,12 +10,16 @@ import Title from "./Title"
 import SEO from "./seo"
 import VideoGallery from "./VideoGallery"
 
-const Wrapper = style.div`
+const Wrapper = styled.div`
   p {
-    margin: 0 auto;
-    padding-bottom: 2rem; 
-    max-width: 1000px;
-    line-height: 1.9rem;
+    color: lightgrey;
+    padding: 0 10px;
+    @media(min-width: 600px) {
+      margin: 0 auto;
+      padding-bottom: 2rem; 
+      max-width: 1000px;
+      line-height: 1.8rem;
+    }
   }
   .react-images__view-image {
     max-height: 100vh !important;
@@ -63,7 +67,7 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
     return undefined;
   }).filter(item => item !== undefined)
 
-  console.log("galleryPhotos", galleryPhotos)
+//  console.log("galleryPhotos", galleryPhotos)
 
   const lightboxPhotos = photos.map((photo, index) => {
 /*    const { maxWidth, maxHeight } = photo.cloudinary.thumbnail_fluid
@@ -108,7 +112,7 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
       <SEO title={`${_.capitalize(name)} Portfolio`} />
       <Title title={_.startCase(name)} />
       <Wrapper>
-        <p>{description}</p>
+        {description && <p>{description}</p>}
         {name==="video" 
           ? <VideoGallery videos={galleryPhotos} />
           : (

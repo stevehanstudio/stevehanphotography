@@ -28,6 +28,7 @@ const SEO = ({ title, description, image, article }) => {
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <meta name="keywords" content="electronic dance music photography, electronic dance music images, travel photography, fashion photography, lifestyle photography, portrait photography, food photography, cocktails photography, photography, gatsby, gatsbyJS, gatsby.js, gatsby cloudinary, gatsby-transformer-cloudinary, gatsby transformer cloudinary plugin" />
 
       {seo.url && <meta property="og:url" content={seo.url} />}
 
@@ -54,6 +55,9 @@ const SEO = ({ title, description, image, article }) => {
       )}
 
       {seo.image && <meta name="twitter:image" content={seo.image} />}
+
+      <meta property="og:locale" content="en_US" />
+      <link rel="canonical" href={seo.url} />
     </Helmet>
   )
 }
