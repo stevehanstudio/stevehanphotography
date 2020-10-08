@@ -23,6 +23,7 @@
     "gatsby-plugin-styled-components": "^3.3.12",
     "gatsby-source-filesystem": "^2.3.32",
     "gatsby-transformer-cloudinary": "^1.1.3",
+    "gatsby-transformer-remark": "^2.8.38",
     "gatsby-transformer-sharp": "^2.5.16",
     "gatsby-transformer-yaml": "^2.4.13",
     "prop-types": "^15.7.2",

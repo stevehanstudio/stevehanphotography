@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react"
 import styled from "styled-components"
 import logo from "../../static/SteveHanPhotography_logo.png"
+//import new_logo from "../../static/stevehanphotography_white_logo.svg"
 import { Link } from "gatsby"
 import _ from "lodash"
 import { navLinks, socialLinks } from "../constants/links"
