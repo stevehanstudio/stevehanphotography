@@ -35,17 +35,23 @@ const Portfolios = () => {
           ...CloudinaryAssetFluid
         }
       }
-      techEvents: cloudinaryAsset(fluid: { src: { regex: "/techEvents-01-/" } }) {
+      techEvents: cloudinaryAsset(
+        fluid: { src: { regex: "/techEvents-01-/" } }
+      ) {
         fluid {
           ...CloudinaryAssetFluid
         }
       }
-      restaurants: cloudinaryAsset(fluid: { src: { regex: "/restaurants-01-/" } }) {
+      restaurants: cloudinaryAsset(
+        fluid: { src: { regex: "/restaurants-01-/" } }
+      ) {
         fluid {
           ...CloudinaryAssetFluid
         }
       }
-      video: cloudinaryAsset(fluid: { src: { regex: "/video-01-/" } }) {
+      video: cloudinaryAsset(
+        fluid: { src: { regex: "/video-01-/" } }
+      ) {
         fluid {
           ...CloudinaryAssetFluid
         }
@@ -62,7 +68,7 @@ const Portfolios = () => {
         {Object.keys(data).map(photo => (
           //<div>{JSON.stringify(data[photo])}</div>
           <StyledLink key={photo} to={`${photo}/`}>
-            <StyledTitle>{_.startCase(photo)}</StyledTitle>
+            <h3>{_.startCase(photo)}</h3>
             <StyledImage fluid={data[photo].fluid} />
           </StyledLink>
         ))}
@@ -102,6 +108,43 @@ const StyledLink = styled(Link)`
     width: 33.3%;
     height: calc(100vw * 0.2);
   }
+
+  &:hover > h3 {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+  }
+
+  h3 {
+    position: absolute;
+    transition: 0.3s;
+    transition-timing-function: ease-in;
+    color: white;
+    font-weight: 500;
+    text-transform: capitalize;
+    //  text-align: middle;
+    //align-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 1.25rem;
+  }
+  @media (min-width: 400px) and (max-width: 766px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 767px) and (max-width: 1199px) {
+    h3 {
+      font-size: 1.25rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
 `
 
 const StyledImage = styled(Image)`
@@ -110,6 +153,7 @@ const StyledImage = styled(Image)`
   object-fit: cover;
   overflow: hidden;
   transition: 0.8s;
+  transition-timing-function: ease-in;
   background: black;
   opacity: 0.7;
   margin: 0;
@@ -120,20 +164,6 @@ const StyledImage = styled(Image)`
     transform: scale(1.15);
     opacity: 1;
   }
-`
-
-const StyledTitle = styled.h3`
-  position: absolute;
-  color: white;
-  font-weight: 500;
-  text-transform: uppercase;
-  //  text-align: middle;
-  align-content: center;
-  left: 50%;
-  margin-left: -4.4rem;
-  top: 50%;
-  margin-top: -1.8rem;
-  z-index: 1;
 `
 
 export default Portfolios

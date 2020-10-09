@@ -342,10 +342,7 @@
   slug: /video
   description: ~
   photos:
-  - name: video-01-MaraAlexWedding
-    caption: Mara and Alex's Wedding.
-    videoUrl: https://youtu.be/5Z1WgnSeee4
-  - name: video-02-MuralPaintingMissyM
+  - name: video-01-MuralPaintingMissyM
     caption: Mural Painting by Missy M.  Music by Jason Martineau.  Unfinished due to hard to hard drive crash but I decided to put this up anyways.
     videoUrl: https://youtu.be/RA-nSnuKYis
 

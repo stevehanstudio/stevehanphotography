@@ -63,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
          font-size: 2.5rem;
       }
       h3 {
-         font-size: 1.75rem;
+         font-size: 1.35rem;
       }
       h4 {
          font-size: 1rem;
@@ -78,7 +78,6 @@ const GlobalStyle = createGlobalStyle`
          line-height: 1;
       }
    }
-
    .btn {
       text-transform: uppercase;
       background: grey;

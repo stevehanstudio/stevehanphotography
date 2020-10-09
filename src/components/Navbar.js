@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react"
 import styled from "styled-components"
+import ReactTooltip from "react-tooltip"
 import logo from "../../static/SteveHanPhotography_logo.png"
 //import new_logo from "../../static/stevehanphotography_white_logo.svg"
 import { Link } from "gatsby"
@@ -23,6 +24,7 @@ const Navbar = ({location}) => {
 
   return (
     <Wrapper showSubMenu={showSubMenu} location={location}>
+      <ReactTooltip />
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
@@ -89,15 +91,21 @@ const Navbar = ({location}) => {
           </ul>
           <ul className="social-links">
             {socialLinks.map((socialLink, index) => {
-              const { url, Icon } = socialLink
+              const { url, Icon, label, iconColor } = socialLink
               //console.log(label, Icon, url)
               return (
-                <li key={index}>
+                <li iconColor={iconColor} key={index}>
                   <a
                     className="button"
                     href={url}
                     rel="noreferrer"
                     target="_blank"
+                    data-tip={label}
+                    data-place="bottom"
+                    data-effect="solid"
+                    data-text-color="rgba(255,255,255,0.65)"
+                    data-border={true}
+                    data-border-color="rgba(255,255,255,0.3)"
                   >
                     <Icon />
                   </a>

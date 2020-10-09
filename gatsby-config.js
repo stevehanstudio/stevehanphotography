@@ -120,6 +120,7 @@ module.exports = {
         icon: `static/stevehan-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-fonts-v2`,
       options: {

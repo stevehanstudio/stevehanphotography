@@ -34,6 +34,7 @@
     "react-images": "^1.1.7",
     "react-photo-gallery": "^8.0.0",
     "react-player": "^2.6.2",
+    "react-tooltip": "^4.2.10",
     "styled-components": "^5.2.0",
     "styled-normalize": "^8.0.7",
     "theme-ui": "^0.3.1"

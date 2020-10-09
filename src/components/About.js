@@ -2,8 +2,8 @@ import React from "react"
 //import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Title from "./Title"
-import logo from "../../static/SteveHanPhotography_logo.png"
-import new_logo from '../../static/stevehanphotography_white_logo.svg'
+//import logo from "../../static/SteveHanPhotography_logo.png"
+//import new_logo from '../../static/stevehanphotography_white_logo.svg'
 //import photo from "https://res.cloudinary.com/dwwthhrah/image/upload/v1601755897/SunsetPartyNavatoPhotoByMalcolmTrachtenberg.jpg"
 
 const About = () => {
