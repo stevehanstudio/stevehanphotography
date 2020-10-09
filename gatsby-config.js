@@ -4,11 +4,11 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Steve Han Photography portfolio`,
-    description: `Photography and video portfolio site built using React, Gatsby, Cloudinary, Gatsby Background Image, Gatsby Transformer Cloudinary plugins and React Context API. Styled using Styled-Components. `,
+    description: `My journey in travel, dance music, fashion, commercial, and events photography.  This site is built using React, Gatsby, Cloudinary, GraphQL, and Styled-Components. `,
     author: `Steve Han`,
     titleTemplate: `%s | Steve Han Photography`,
     url: `https://www.stevehanphotography.com`,
-    image: `/mainBcg.png`,
+    image: `/main.png`,
     twitterUsername: `@stevehanphoto`,
     siteUrl: `https://www.stevehanphotography.com`,
   },
@@ -16,6 +16,20 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "noopener noreferrer",
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,10 +43,6 @@ module.exports = {
         name: `markdown`,
         path: `${__dirname}/src/content/markdown`,
       },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {},
     },
     {
       resolve: `gatsby-source-filesystem`,

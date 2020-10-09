@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 const Success = () => {
   return <Layout>
-    <SEO title="Contact submission success" />
+    <SEO title="Contact submission success" description="Contact form submission is successful." />
     <Wrapper>
       <div className="page-center">
         <Title title="Success!" />

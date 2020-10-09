@@ -60,10 +60,12 @@ const Portfolios = () => {
   `)
 
   //console.log("Portfolios", data)
-
+  //const description = (_.toLower(_.startCase(Object.keys(data)))).join(', ') + ' portfolios'
+  const description = Object.keys(data).join(', ') + ' portfolios'
+  //console.log("description", description)
   return (
     <Layout>
-      <SEO title="All Portfolios" />
+      <SEO title="All Portfolios" description={description} />
       <StyledContainer>
         {Object.keys(data).map(photo => (
           //<div>{JSON.stringify(data[photo])}</div>

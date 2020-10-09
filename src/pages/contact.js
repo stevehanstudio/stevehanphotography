@@ -5,19 +5,26 @@ import { Layout, SEO, Title } from "../components"
 const Contact = () => {
    return (
      <Layout>
-       <SEO title="Contact" />
+       <SEO
+         title="Contact"
+         description="Contact form with name, email, subject, and message fields"
+       />
        <Wrapper>
          <Title title="Contact Me" />
-          <form 
-              name="stevehanphotography-contact"
-              method="post"
-              netlify-honeypot="bot-field"
-              action="/success" 
-              data-netlify="true"
-          >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="stevehanphotography-contact" />
-            <div className="fields">
+         <form
+           name="stevehanphotography-contact"
+           method="post"
+           netlify-honeypot="bot-field"
+           action="/success"
+           data-netlify="true"
+         >
+           <input type="hidden" name="bot-field" />
+           <input
+             type="hidden"
+             name="form-name"
+             value="stevehanphotography-contact"
+           />
+           <div className="fields">
              <input
                type="text"
                name="name"

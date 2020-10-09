@@ -65,8 +65,6 @@ const Navbar = ({location}) => {
                         e.preventDefault()
                         setShowSubMenu(false)
                       }}
-                      ariaHaspopup="true"
-                      ariaExpanded="false"
                       tabIndex={0} 
                       role="menu"
                     >
@@ -75,7 +73,7 @@ const Navbar = ({location}) => {
                         <Link
                           key={index}
                           role="menuitem"
-                          ariaHaspopup="true"
+                          aria-haspopup="true"
                           tabIndex={-1} 
                           className="button"
                           to={`/portfolios${link.slug}`}
@@ -94,7 +92,7 @@ const Navbar = ({location}) => {
               const { url, Icon, label, iconColor } = socialLink
               //console.log(label, Icon, url)
               return (
-                <li iconColor={iconColor} key={index}>
+                <li key={index}>
                   <a
                     className="button"
                     href={url}
