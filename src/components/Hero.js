@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useSwipeable } from "react-swipeable"
 import Background from "./Background"
 import styled from "styled-components"
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi"
@@ -8,6 +9,13 @@ const Hero = ({ portfolios }) => {
   const images = portfolios.map(item => {
     const image = item.childCloudinaryAsset.fluid
     return image
+  })
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => setIndex(index - 1),
+    onSwipedRight: () => setIndex(index + 1),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
   })
 
   const [index, setIndex] = useState(0)
@@ -31,30 +39,32 @@ const Hero = ({ portfolios }) => {
   })
 
   return (
-    <Wrapper>
-      <Background image={images[index]}></Background>
-      <button className="prev-btn" onClick={() => setIndex(index - 1)}>
-        <FiChevronLeft />
-      </button>
-      <button className="next-btn" onClick={() => setIndex(index + 1)}>
-        <FiChevronRight />
-      </button>
-      <div className="dots">
-        {images.map((_, btnIndex) => {
-          return (
-            <span
-              key={btnIndex}
-              onClick={() => setIndex(btnIndex)}
-              role="button"
-              aria-label="Select Image"
-              tabIndex={btnIndex}
-              onKeyDown={() => setIndex(btnIndex)}
-              className={index === btnIndex ? "active" : undefined}
-            ></span>
-          )
-        })}
-      </div>
-    </Wrapper>
+    <div {...swipeHandlers}>
+      <Wrapper>
+        <Background image={images[index]}></Background>
+        <button className="prev-btn" onClick={() => setIndex(index - 1)}>
+          <FiChevronLeft />
+        </button>
+        <button className="next-btn" onClick={() => setIndex(index + 1)}>
+          <FiChevronRight />
+        </button>
+        <div className="dots">
+          {images.map((_, btnIndex) => {
+            return (
+              <span
+                key={btnIndex}
+                onClick={() => setIndex(btnIndex)}
+                role="button"
+                aria-label="Select Image"
+                tabIndex={btnIndex}
+                onKeyDown={() => setIndex(btnIndex)}
+                className={index === btnIndex ? "active" : undefined}
+              ></span>
+            )
+          })}
+        </div>
+      </Wrapper>
+    </div>
   )
 }
 
