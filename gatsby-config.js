@@ -8,7 +8,7 @@ module.exports = {
     author: `Steve Han`,
     titleTemplate: `%s | Steve Han Photography`,
     url: `https://www.stevehanphotography.com`,
-    image: `/main.png`,
+    image: `/main.jpg`,
     twitterUsername: `@stevehanphoto`,
     siteUrl: `https://www.stevehanphotography.com`,
   },

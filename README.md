@@ -46,13 +46,14 @@ This project is a web application that shares my journey in photography, which s
     │   ├── about.js # About me page.  Gets the content from markdown file and passes it to the About component
     │   ├── contact.js # Contain form with submission to Netlify.
     │   ├── index.js # Home page shows hero images.
-    │   ├── portfolios.js # D 
+    │   ├── portfolios.js # Fetches and displays the 1st image from each portfolio and link to its corresponding gallery page
     │   ├── success.js # Response to successful form submitted 
     ├── templates
     │   └── gallery-query.js # Create pages for gallery pages of each the portfolio
     └── static
         ├── FcAbout.js # Wrapper for About SVG icon
         ├── GrGallery.js # Wrapper for GrGallery SVG icon
+        ├── main.jpg # Open Graph (OG) image
         ├── mainBcg.jpg # Image used in case images cannot be loaded from Cloudinary
         ├── stevehan-icon.png # Image used by manifest for PWA to generate favicon
         ├── SteveHanPhotography_logo.png # Branded logo used on Navbar.  Will use SVG version of logo once ready
