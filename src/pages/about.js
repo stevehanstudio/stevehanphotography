@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { Layout, SEO, About } from "../components"
 
 const about = ({ data }) => {

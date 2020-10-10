@@ -8,7 +8,7 @@ import Title from "./Title"
 
 const About = ({data}) => {
   const {html, frontmatter: {image, imageDesc, title}} = data
-  console.log("About", image, imageDesc, title)
+//  console.log("About", image, imageDesc, title)
   return (
     <Wrapper className="section">
 {/*      <img
