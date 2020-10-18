@@ -3,8 +3,10 @@
 This project is a web application that shares my journey in photography, which spans from travel to dance music to fashion and lifestyle to my commercial work such as food and drinks to coverage of technology events such as conferences, meetups and hackathons.  It is built using React/javascript, Gatsby for static site generation, GraphQL, Cloudinary for responsive media management, Netlify for deployment and form management, Styled Components for styling, Google Analytics and Tag Manager.  I've optimized it for SEO, at least from a developer's viewport. (i.e. since it's an image based website the pages won't have the 900+ words that is optimal for SEO and more time can be spent finding keywords.)
 
 
-
 ## Project Folder Structure
+<details>
+    <summary>View project folder structure with description</summary>
+
 ```
 ├── README.md # This file.
 ├── package.json # npm package manager file.
@@ -59,10 +61,12 @@ This project is a web application that shares my journey in photography, which s
         ├── SteveHanPhotography_logo.png # Branded logo used on Navbar.  Will use SVG version of logo once ready
         └── SteveHanPhotography_white_logo.svg # SVG version of logo.  Work in progress
 ```
+</details>
+
 ## License
 Proprietary.  All rights reserved.
 
 ## Resources
-- [Gatsby Tutorial and Projects Course](https://www.udemy.com/course/gatsby-tutorial-and-projects-course/)
+- [Gatsby Tutorial and Projects Course](https://www.udemy.com/course/atsby-tutorial-and-projects-course/)
 - [React styled-components v5 (2020 edition)](https://www.udemy.com/course/react-styled-components/)
 - [Cloudinary Fundamentals for Developers](https://training.cloudinary.com/courses/cloudinary-fundamentals-for-developers)

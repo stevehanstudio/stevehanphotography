@@ -1,10 +1,8 @@
 import React, { useState, useCallback } from "react"
-//import useWindowDimensions from "../hooks/useWindowDimensions"
 import styled from "styled-components"
 import Gallery from "react-photo-gallery"
 import Carousel, { Modal, ModalGateway } from "react-images"
 import _ from "lodash"
-//import { Box } from "theme-ui"
 import Layout from "./layout"
 import Title from "./Title"
 import SEO from "./seo"
@@ -29,9 +27,6 @@ const Wrapper = styled.div`
 export default ({ name, description, options={margin: 5, direction: "row"}, photos }) => {
   const [currentImage, setCurrentImage] = useState(0)
   const [viewerIsOpen, setViewerIsOpen] = useState(false)
-//  const { height: viewportHeight, width: viewportWidth } = useWindowDimensions()
-
-//  console.log("Viewport", viewportHeight, viewportWidth)
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index)
@@ -60,7 +55,7 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
         sizes: photo.cloudinary.thumbnail_fluid.sizes,
         srcSet: photo.cloudinary.thumbnail_fluid.srcSet,
         alt: photo.caption,
-        title: photo.caption,
+        //title: photo.caption,
         videoUrl: photo.videoUrl,
       }
     }
@@ -70,28 +65,6 @@ export default ({ name, description, options={margin: 5, direction: "row"}, phot
 //  console.log("galleryPhotos", galleryPhotos)
 
   const lightboxPhotos = photos.map((photo, index) => {
-/*    const { maxWidth, maxHeight } = photo.cloudinary.thumbnail_fluid
-    const widthRatio = viewportWidth / maxWidth
-    const heightRatio = viewportHeight / maxHeight
-    let width, height
-
-    if (widthRatio > 1 && heightRatio > 1) {
-      width = maxWidth
-      height = maxHeight
-    } else if (widthRatio < 1 && heightRatio > 1) {
-      width = viewportWidth
-      height = maxHeight * widthRatio
-    } else if (widthRatio > 1 && heightRatio < 1) {
-      width = maxWidth * heightRatio
-      height = viewportHeight
-    } else if (widthRatio < heightRatio) {
-      width = viewportWidth
-      height = maxHeight * widthRatio
-    } else {
-      width = maxWidth * widthRatio
-      height = viewportHeight
-    }
-*/
     if (photo.cloudinary !== null && photo.cloudinary.lightbox_fluid !== null) {   
       //console.log("lightboxPhoto", photo.cloudinary.lightbox_fluid)
       return {
